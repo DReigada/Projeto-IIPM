@@ -1,0 +1,27 @@
+.jumbotron{
+	background-color: #ffffff;
+}
+
+#header{
+	text-align: center;
+}
+
+#menu_option{
+	width: 50%;
+    margin: 0 auto;
+    background:url(../img/menu_logo.jpg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+
+#music_option{
+	width: 50%;
+    margin: 0 auto;
+    background:url(../img/music_logo.png) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
