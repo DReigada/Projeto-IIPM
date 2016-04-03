@@ -6,7 +6,7 @@
 	text-align: center;
 }
 
-#menu_option{
+#bar_menu{
 	width: 50%;
     margin: 0 auto;
     background:url(../img/menu_logo.jpg) no-repeat center center;
@@ -15,11 +15,28 @@
 	width:200px;
 	border:1px solid black;
 }
-
 #music_option{
 	width: 50%;
     margin: 0 auto;
     background:url(../img/music_logo.png) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+#food_menu{
+	width: 50%;
+    margin: 0 auto;
+    background:url(../img/food_menu_logo.jpeg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+#drinks_menu{
+	width: 50%;
+    margin: 0 auto;
+    background:url(../img/drinks_menu_logo.jpeg) no-repeat center center;
     background-size: contain;
 	height:200px;
 	width:200px;
