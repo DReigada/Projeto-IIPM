@@ -1,0 +1,35 @@
+#table{
+  background: url("../images/table.jpg");
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 90%;
+  height: 100%;
+}
+
+#topButton{
+  top: 20px; left: 45%;
+}
+
+#bottomButton{
+  bottom: 20px; left: 45%;
+}
+
+#leftButton{
+  top: 50%; left: 20px;
+}
+
+#rightButton{
+  top: 50%; right: 20px;
+}
+
+.newWindowButton{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+iframe{
+  border: 0;
+  border-top: 20px white solid;
+}
