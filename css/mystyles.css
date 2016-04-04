@@ -1,18 +1,26 @@
-body{
-    min-height: 100vh;
+html, body{
+    height: 100%;
 }
 .jumbotron{
 	background-color: #ffffff;
 }
-
 #header{
 	text-align: center;
 }
 
-.center_horiz_div{
+position-relative{
+    position: relative;
+}
+.center-horiz-div{
 	width: 50%;
     margin: 0 auto;
 }  
+.vertical-fill{
+    height: 100%;
+}
+.almost-vertical-fill{
+    height: 96%;
+}
 .vertically-center{
 	min-height: 100vh;
 	display: flex;
@@ -53,11 +61,17 @@ body{
 
 /* food menu*/
 .side-bar{
-    border-left: 1px solid black; 
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 1px solid black; 
+    border-radius: 25px;
 }
 .middle-center{
-    margin-top: 20%;
+    margin-top: 30%;
 }
-.total-height{
-    min-height: 100vh
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
