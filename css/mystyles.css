@@ -1,0 +1,41 @@
+.jumbotron{
+	background-color: #ffffff;
+}
+
+#header{
+	text-align: center;
+}
+
+.center_horiz_div{
+	width: 50%;
+    margin: 0 auto;
+}
+
+#bar_menu{
+    background:url(../img/menu_logo.jpg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+#music_option{
+    background:url(../img/music_logo.png) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+#food_menu{
+    background:url(../img/food_menu_logo.jpeg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
+#drinks_menu{
+    background:url(../img/drinks_menu_logo.jpeg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
