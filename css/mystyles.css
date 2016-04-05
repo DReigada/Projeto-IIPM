@@ -37,9 +37,14 @@ html, body{
     height: 10%;
 }
 
-/* blocks inline */
+/* blocks */
 .inline{
 	display: inline-block;
+}
+
+/* Menus */
+.on-hover{
+	cursor: pointer;
 }
 
 /* home screen */
