@@ -46,6 +46,19 @@ html, body{
 .on-hover{
 	cursor: pointer;
 }
+.item-highlight{
+	border-color: darkgoldenrod;
+  	border-width: 3px;
+  	border-style: solid;
+	border-radius: 10px;
+}
+.hidden{
+	visibility: hidden;
+}
+.small-margin{
+	margin-top: 10px; 
+}
+
 
 /* home screen */
 #bar_menu{
@@ -85,4 +98,5 @@ html, body{
     padding-left: 10px;
     border: 1px solid black; 
     border-radius: 25px;
-}  
+}
+
