@@ -5,13 +5,14 @@
     <title>BarISTa</title>
 
     <link rel="stylesheet" type="text/css" href="css/table.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <div id="table" class="container">
-      <button id="topButton" class="newWindowButton">+</button>
-      <button id="bottomButton" class="newWindowButton">+</button>
-      <button id="leftButton" class="newWindowButton">+</button>
-      <button id="rightButton" class="newWindowButton">+</button>
+      <button type="button" id="topButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="bottomButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="leftButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="rightButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
     </div>
 
 <script id="windowTemplate" type="text/template">
@@ -26,11 +27,15 @@
     <div>
 </script>
 
+    <!-- jQuery -->
     <script src="js/jquery-2.2.2.min.js"></script>
+    <!-- jQuery UI -->
     <script src="js/jquery-ui.min.js"></script>
-
+    <!-- bootstrap -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- jQuery plugin to use transforms easily -->
     <script src="js/jquery.transform2d.js">    </script>
+
     <script type="text/javascript">
      $(".newWindowButton").click(function(event) {
           var scale = 0.6;
