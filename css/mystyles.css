@@ -5,7 +5,7 @@ html, body{
 	background-color: #ffffff;
 }
 
-/* horizontal aligment */
+/* ----------- horizontal aligment ---------- */
 .center-horiz-div{
 	width: fit-content;
     margin: 0 auto;
@@ -14,7 +14,7 @@ html, body{
 	text-align: center;
 }
 
-/* vertical alignement */
+/* ----------- vertical alignement ----------- */
 .outer-vertically-align{
     display: flex;
     justify-content: center;
@@ -23,7 +23,7 @@ html, body{
     align-self: center;
 }
 
-/* relative vertical fills */
+/* ----------- relative vertical fills ----------- */
 .vertical-fill{
     height: 100%;
 }
@@ -37,12 +37,17 @@ html, body{
     height: 10%;
 }
 
-/* blocks */
+/* ----------- blocks ----------- */
 .inline{
 	display: inline-block;
 }
-
-/* Menus */
+/* ----------- Menus -----------*/
+.side-bar{
+    margin-top: 10px;
+    padding-left: 10px;
+    border: 1px solid black; 
+    border-radius: 25px;
+}
 .on-hover{
 	cursor: pointer;
 }
@@ -69,7 +74,7 @@ html, body{
 }
 
 
-/* home screen */
+/* ----------- initial options ----------- */
 #bar_menu{
     background:url(../img/menu_logo.png) no-repeat center center;
     background-size: contain;
@@ -85,7 +90,7 @@ html, body{
 	border:1px solid black;
 }
 
-/* bar menu screen */
+/* ----------- bar menu options ----------- */
 #food_menu{
     background:url(../img/food_menu_logo.jpeg) no-repeat center center;
     background-size: contain;
@@ -99,13 +104,5 @@ html, body{
 	height:200px;
 	width:200px;
 	border:1px solid black;
-}
-
-/* food menu*/
-.side-bar{
-    margin-top: 10px;
-    padding-left: 10px;
-    border: 1px solid black; 
-    border-radius: 25px;
 }
 
