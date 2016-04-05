@@ -15,13 +15,15 @@
     </div>
 
 <script id="windowTemplate" type="text/template">
-    <div class="window">
-      <div class="windowHandle">
-        <button class="exitButton">X</button>
-        <button class="rotateButton" style="float: right;">ROT</button>
+    <div class="windowDraggable">
+      <div class="window">
+        <div class="windowHandle">
+          <button class="exitButton">X</button>
+          <button class="rotateButton" style="float: right;">ROT</button>
+        </div>
+        <iframe class="windowiframe" scrolling="no" src="home.html"></iframe>
       </div>
-      <iframe id="windowiframe" scrolling="no" src="home.html"></iframe>
-    </div>
+    <div>
 </script>
 
     <script src="js/jquery-2.2.2.min.js"></script>
@@ -33,21 +35,21 @@
      $(".newWindowButton").click(function(event) {
           var scale = 0.6;
 
-          $("#table").append($("#windowTemplate").html());
-
-          $(".window").css('transform', 'scale(' + scale + ')');
+          var newWindow = $($("#windowTemplate").html()).appendTo('#table');
+          newWindow.css('transform', 'scale(' + scale + ')');
 
           var limits = [0,0,$("#table").width() - $(".window").width() * scale,$("#table").height() - $(".window").height() * scale];
 
-          $(".window").draggable({
+          newWindow.draggable({
             iframeFix : true,
-            containment: limits//[0,0, $(this).parent().width() - $(this).width()*5 , $(this).parent().height()  - $(this).height()*2]
+            containment: limits
           });
-          $(".exitButton").click(function(event) {
-            $(this).parent().parent().remove();
+          newWindow.find(".exitButton").click(function(event) {
+            $(this).parents(".windowDraggable").remove();
           });
-          $(".rotateButton").click(function(event) {
-            $(this).parent().parent().animate({'transform': '+=rotate(90deg)'});
+          newWindow.find(".rotateButton").click(function(event) {
+            $(this).parents(".windowDraggable").animate({'transform': '+=rotate(90deg)'});
+
           });
       });
 
