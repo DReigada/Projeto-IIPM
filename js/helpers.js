@@ -60,7 +60,7 @@ function changeQuantityOfProduct(rowNumber, order){
  * order: JSON object, the order
  */
 function removeProduct(rowNumber, order){
-	
+	// TODO: must decrement the key of all the produts that come in the order JSON object after the deleted product
 }
 
 
