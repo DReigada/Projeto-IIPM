@@ -46,7 +46,6 @@ $(function(){
 		
 		// if user wants to add product that is already in table, simply increment quantity value
 		if (pos != -1){
-			
 			order[pos].quantity = Number(order[pos].quantity) + 1;
 			changeQuantityOfProduct(n, 1);
 			
