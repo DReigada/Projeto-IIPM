@@ -1,32 +1,22 @@
 $(function(){ 
 	
-	function new_product_clicked(product, prev){
-		$("#add_button").removeClass('hidden');
-		$(prev).removeClass('item-highlight');
-		$(product).addClass('item-highlight');
-	}
-	
-	function addProductToTable(name, quantity){
-		var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-		var button='<td><button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-minus"></i></button></td>'
-		$('#orderTable > tbody:last-child').append('<tr>' + quantityTd + nameTd + button + '</tr>');
-	}
-	
+	// determines which product is selected at each moment
 	var selected_id="#option1", selected;
 	
+	// Populates table with the current order if it already exists
 	if (localStorage.numberOfProducts && localStorage.numberOfProducts != "0"){
-		console.log("ja criado");
 		var obj = JSON.parse(localStorage.order);
 		$.each(obj, function(key, value) {
     		addProductToTable(value["name"], value["quantity"]);
 		});
-	
+		
+	// Creates the order object if it didn't exist already
 	} else {
-		console.log("a criar");
 		localStorage.numberOfProducts = 0;
 		localStorage.order=JSON.stringify({});
 	}
 	
+	// Looks for clicks on the products and highlights if clicked
 	$("#option1").on("click", function(){
 		new_product_clicked("#option1", selected_id);
 		selected_id = "#option1";
@@ -48,17 +38,19 @@ $(function(){
 		selected = option4;
 	});
 	
+	// Adds product to order if the plus button was clicked
 	$("#add_button").on("click", function(){
+		// retrieves the order and the number of products there in from the local storage
 		var order = JSON.parse(localStorage.order), n = localStorage.numberOfProducts;
+		var pos = isProductInTable(selected, order);
 		
-		// if already selected add quantity
-		if (!$.isEmptyObject(order) && order[n].name === selected){
-			console.log("name == previous");
-			order[n].quantity = Number(order[n].quantity) + 1;
-			//TODO: update table
+		// if user wants to add product that is already in table, simply increment quantity value
+		if (pos != -1){
 			
-		} else { // else add row to table
-			console.log("name != previous or first product in order");
+			order[pos].quantity = Number(order[pos].quantity) + 1;
+			changeQuantityOfProduct(n, 1);
+			
+		} else { // else adds new row to table
 			localStorage.numberOfProducts = ++n;
 			
 			order[n.toString()] = {'name': selected, 'quantity': '1'};
@@ -71,3 +63,4 @@ $(function(){
 		
 	})
 });
+
