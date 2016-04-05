@@ -47,17 +47,15 @@ $(function(){
 		// if user wants to add product that is already in table, simply increment quantity value
 		if (pos != -1){
 			order[pos].quantity = Number(order[pos].quantity) + 1;
-			changeQuantityOfProduct(n, 1);
+			changeQuantityOfProduct(pos, order);
 			
 		} else { // else adds new row to table
 			localStorage.numberOfProducts = ++n;
 			
 			order[n.toString()] = {'name': selected, 'quantity': '1'};
-			localStorage.order = JSON.stringify(order);
-			
 			addProductToTable(selected, 1);
 		}
-		
+		localStorage.order = JSON.stringify(order);
 		
 		
 	})
