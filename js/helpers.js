@@ -1,4 +1,4 @@
-var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-minus"></i></button></td>';
+var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger small-btn-circle"><i class="glyphicon glyphicon-minus"></i></button></td>';
 
 /**
  * Changes the product that is highlighted
