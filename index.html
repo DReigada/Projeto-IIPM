@@ -37,8 +37,8 @@
 
           var newWindow = $($("#windowTemplate").html()).appendTo('#table');
           newWindow.css('transform', 'scale(' + scale + ')');
-
-          var limits = [0,0,$("#table").width() - $(".window").width() * scale,$("#table").height() - $(".window").height() * scale];
+          newWindow.find(".window").css({'transform': 'rotate(0deg)'});
+          var limits = [0,0, $("#table").width() - newWindow.find(".window").width() * scale, $("#table").height() - newWindow.find(".window").height() * scale];
 
           newWindow.draggable({
             iframeFix : true,
@@ -48,7 +48,7 @@
             $(this).parents(".windowDraggable").remove();
           });
           newWindow.find(".rotateButton").click(function(event) {
-            $(this).parents(".windowDraggable").animate({'transform': '+=rotate(90deg)'});
+            $(this).parents(".window").animate({'transform': '+=rotate(90deg)'});
 
           });
       });
