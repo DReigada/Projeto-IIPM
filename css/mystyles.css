@@ -4,27 +4,42 @@ html, body{
 .jumbotron{
 	background-color: #ffffff;
 }
-#header{
-	text-align: center;
-}
 
-position-relative{
-    position: relative;
-}
+/* horizontal aligment */
 .center-horiz-div{
 	width: fit-content;
     margin: 0 auto;
-}  
+}
+.text-horiz-align{
+	text-align: center;
+}
+
+/* vertical alignement */
+.outer-vertically-align{
+    display: flex;
+    justify-content: center;
+}
+.inner-vertically-align{
+    align-self: center;
+}
+
+/* relative vertical fills */
 .vertical-fill{
     height: 100%;
 }
 .almost-vertical-fill{
-    height: 96%;
+    height: 95%;
 }
-.vertically-center{
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
+.three-quarters-vertical-fill{
+	height: 75%;
+}
+.small-height{
+    height: 10%;
+}
+
+/* blocks inline */
+.inline{
+	display: inline-block;
 }
 
 /* home screen */
@@ -65,13 +80,4 @@ position-relative{
     padding-left: 10px;
     border: 1px solid black; 
     border-radius: 25px;
-}
-.middle-center{
-    margin-top: 30%;
-}
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+}  
