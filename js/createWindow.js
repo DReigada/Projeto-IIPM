@@ -46,6 +46,14 @@ $(".newWindowButton").click(function(event) {
    containment: limits
   });
 
+  // visual indicator that the window is being dragged
+  newWindow.find(".windowHandle").on("mousedown", function(event) {
+    if(event.target == this) $(this).parents(".window").addClass('windowdrag');
+  });
+  newWindow.find(".windowHandle").on("mouseup", function(event) {
+    if(event.target == this) $(this).parents(".window").removeClass('windowdrag');
+  });
+
   // associate the exit and rotate buttons to their functions
   newWindow.find(".exitButton").click(function(event) {
    $(this).parents(".windowDraggable").remove();
