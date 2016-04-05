@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Home</title>
+    <title>Bar Menu</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,27 +16,31 @@
   </head>
   <body>
 
-    <!-- menu or music -->
-    <div class="container">
-    	<div class="row row-content">
-    		<div class="col-xs-6">
-                <div class="row row-content">
-                    <div class="col-xs-12"><div class="center_horiz_div"><h3>Menu Snacks</h3></div></div>
-        			<div class="col-xs-12"><div class="center_horiz_div"><a href="#"><div id="food_menu"></div></a></div></div>
-    		    </div>
-            </div>
-    		<div class="col-xs-6">
-                <div class="row row-content">
-                    <div class="col-xs-12"><div class="center_horiz_div"><h3>Menu Drinks</h3></div></div>
-        			<div class="col-xs-12"><div class="center_horiz_div"><a href="#"><div id="drinks_menu"></div></a></div></div>
+    <!-- food menu or drinks menu -->
+    <div class="container vertical-fill">
+		<div class="text-horiz-align small-height">
+	    	<h2>BarISTa</h2>
+       </div>
+		<div class="outer-vertically-align three-quarters-vertical-fill">
+    		<div class="row row-content inner-vertically-align">
+        		<div class="col-xs-6">
+                    <div class="row row-content">
+                        <div class="col-xs-12"><div class="center-horiz-div"><h3>Menu Snacks</h3></div></div>
+            			<div class="col-xs-12"><div class="center-horiz-div"><a href="food_menu.html"><div id="food_menu"></div></a></div></div>
+        		    </div>
                 </div>
-    		</div>
-
+        		<div class="col-xs-6">
+                    <div class="row row-content">
+                        <div class="col-xs-12"><div class="center-horiz-div"><h3>Menu Drinks</h3></div></div>
+            			<div class="col-xs-12"><div class="center-horiz-div"><a href="drinks_menu.html"><div id="drinks_menu"></div></a></div></div>
+                    </div>
+        		</div>
+			</div>
     	</div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="jquery-2.2.2.min.js"></script>
+    <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>
