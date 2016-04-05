@@ -29,7 +29,18 @@
   border-radius: 50%;
 }
 
+.window{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.windowHandle{
+  background-color: grey;
+}
+
 iframe{
   border: 0;
-  border-top: 20px white solid;
+  width: 550px;
+  height: 420px;
+  overflow: hidden;
 }

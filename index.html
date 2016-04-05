@@ -14,22 +14,44 @@
       <button id="rightButton" class="newWindowButton">+</button>
     </div>
 
+<script id="windowTemplate" type="text/template">
+    <div class="window">
+      <div class="windowHandle">
+        <button class="exitButton">X</button>
+        <button class="rotateButton" style="float: right;">ROT</button>
+      </div>
+      <iframe id="windowiframe" scrolling="no" src="home.html"></iframe>
+    </div>
+</script>
+
     <script src="js/jquery-2.2.2.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.transform2d.js">    </script>
     <script type="text/javascript">
      $(".newWindowButton").click(function(event) {
-        /*$.get('window.html', function(data) {
-          var text = $(data).find(".window").appendTo('#table');
-          console.log(text.prevObject[0]);
-          $("#table").append(text);
-        });*/
-          $("#table").append('<div class="window" style="display: inline;"><iframe id="windowiframe" src="window.html"></iframe></div>');
+          var scale = 0.6;
+
+          $("#table").append($("#windowTemplate").html());
+
+          $(".window").css('transform', 'scale(' + scale + ')');
+
+          var limits = [0,0,$("#table").width() - $(".window").width() * scale,$("#table").height() - $(".window").height() * scale];
+
           $(".window").draggable({
             iframeFix : true,
-            containment: "parent"
+            containment: limits//[0,0, $(this).parent().width() - $(this).width()*5 , $(this).parent().height()  - $(this).height()*2]
+          });
+          $(".exitButton").click(function(event) {
+            $(this).parent().parent().remove();
+          });
+          $(".rotateButton").click(function(event) {
+            $(this).parent().parent().animate({'transform': '+=rotate(90deg)'});
           });
       });
+
+
     </script>
   </body>
 </html>
