@@ -3,7 +3,7 @@ body{
 }
 
 #table{
-  background: url("../images/table.jpg");
+  background: url("../img/table.jpg");
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   width: 90%;
