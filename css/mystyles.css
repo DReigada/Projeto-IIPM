@@ -35,7 +35,7 @@ html, body{
     height: 100%;
 }
 .almost-vertical-fill{
-    height: 95%;
+    height: 87%;
 }
 .three-quarters-vertical-fill{
 	height: 75%;
@@ -125,8 +125,12 @@ html, body{
   margin: 3px;
   float: right;
 }
-
-
+.btn-wide{
+  margin-top: 5px;
+  padding: 2px;
+  width: 100%;
+  font-size: 150%;
+}
 /* ----------- initial options ----------- */
 #bar_menu{
     background:url(../img/menu_logo.png) no-repeat center center;
