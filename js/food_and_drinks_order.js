@@ -70,4 +70,17 @@ $(function(){
 			localStorage.order = JSON.stringify(order);
 			sessionStorage.numberOfProducts = 0;
 	});
+
+	// cancel the order
+	$("#cancelOrder").on('click', function(event) {
+		var order = JSON.parse(sessionStorage.order);
+
+		// if user wants to cancel the order, all product selected will be removed
+		while (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0") {
+			n = parseInt(sessionStorage.numberOfProducts);
+			removeProduct(n, order);
+		}
+			localStorage.order = JSON.stringify(order);
+			sessionStorage.numberOfProducts = 0;
+	});
 });

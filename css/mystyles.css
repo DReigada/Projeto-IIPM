@@ -168,3 +168,12 @@ html, body{
     table-layout: fixed;
     word-wrap: break-word;
 }
+
+/* ---------Cancel Confirmation------------*/
+
+.confirmation{
+  /*display: block;*/
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20%;
+}
