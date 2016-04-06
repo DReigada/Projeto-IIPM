@@ -5,7 +5,7 @@ html, body{
   	-khtml-user-select: none;
   	-moz-user-select: none;
 	-ms-user-select: none;
-  	user-select: none;	
+  	user-select: none;
 	cursor: default;
 }
 .jumbotron{
@@ -52,7 +52,7 @@ html, body{
 .side-bar{
     margin-top: 10px;
     padding-left: 10px;
-    border: 1px solid black; 
+    border: 1px solid black;
     border-radius: 25px;
 }
 .on-hover{
@@ -74,10 +74,10 @@ html, body{
 	visibility: hidden;
 }
 .small-margin{
-	margin-top: 6px; 
+	margin-top: 6px;
 }
 .small-padding{
-	padding: 2px; 
+	padding: 2px;
 }
 .btn-circle {
   width: 30px;
@@ -96,6 +96,10 @@ html, body{
   font-size: 8px;
   line-height: 1;
   border-radius: 10px;
+}
+#homeButton{
+  margin: 3px;
+  float: right;
 }
 
 
@@ -136,4 +140,3 @@ html, body{
     table-layout: fixed;
     word-wrap: break-word;
 }
-
