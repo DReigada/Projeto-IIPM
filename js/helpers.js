@@ -19,14 +19,14 @@ function addProductToTable(name, quantity){
 	
 	$(div).on("click", function(){
 		
-		var order = JSON.parse(localStorage.order);
+		var order = JSON.parse(sessionStorage.order);
 		
 		var $tr = $(this).closest('tr'); // gets the tr element of the clicked button
 		var rowIndex = $tr.index() + 1;      // gets the row number of the clicked button
 		
 		// decrease the quantity in the order object
 		order[rowIndex].quantity = order[rowIndex].quantity - 1;
-		localStorage.order = JSON.stringify(order);
+		sessionStorage.order = JSON.stringify(order);
 		
 		// decrease the quantity in the order table (deletes product if quantity is 0)
 		changeQuantityOfProduct(rowIndex, order);
@@ -80,7 +80,7 @@ function changeQuantityOfProduct(rowNumber, order){
  * order: JSON object, the order
  */
 function removeProduct(rowNumber, order){
-	var n = localStorage.numberOfProducts;
+	var n = sessionStorage.numberOfProducts;
 		
 	var key;
 	for (var i=0; i<n; ++i){
@@ -93,8 +93,8 @@ function removeProduct(rowNumber, order){
 	}
 	delete order[key];
 
-	localStorage.numberOfProducts = --n;
-	localStorage.order = JSON.stringify(order);
+	sessionStorage.numberOfProducts = --n;
+	sessionStorage.order = JSON.stringify(order);
 
 	$('#orderTable tr').eq(rowNumber).remove();
 }
