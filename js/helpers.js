@@ -1,9 +1,9 @@
-var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger small-btn-circle"><i class="glyphicon glyphicon-minus"></i></button></td>';
+var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger small-btn-circle decrease_button"><i class="glyphicon glyphicon-minus"></i></button></td>';
 
 /**
  * Changes the product that is highlighted
  */
-function new_product_clicked(product, prev){
+function newProductClicked(product, prev){
 	$("#add_button").removeClass('hidden');
 	$(prev).removeClass('item-highlight');
 	$(product).addClass('item-highlight');
@@ -14,7 +14,24 @@ function new_product_clicked(product, prev){
  */
 function addProductToTable(name, quantity){
 	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-	$('#orderTable > tbody:last-child').append('<tr>' + quantityTd + nameTd + DECREMENT_BUTTON_HTML + '</tr>');
+	var str = '<tr>' + quantityTd + nameTd + DECREMENT_BUTTON_HTML + '</tr>';
+	var div = $(str).appendTo('#orderTable > tbody:last-child');
+	
+	$(div).on("click", function(){
+		
+		var order = JSON.parse(localStorage.order);
+		
+		var $tr = $(this).closest('tr'); // gets the tr element of the clicked button
+		var rowIndex = $tr.index() + 1;      // gets the row number of the clicked button
+		
+		// decrease the quantity in the order object
+		order[rowIndex].quantity = order[rowIndex].quantity - 1;
+		localStorage.order = JSON.stringify(order);
+		
+		// decrease the quantity in the order table (deletes product if quantity is 0)
+		changeQuantityOfProduct(rowIndex, order);
+		
+	});
 }
 
 /**
@@ -31,7 +48,7 @@ function isProductInTable(name, order){
 	var out = -1;
 	$.each(order, function(key, value) {
    		if (value["name"] === name){ 
-			out=key.toString();
+			out=key;
 			return;
 		}
 	});
@@ -49,18 +66,37 @@ function isProductInTable(name, order){
  *
  */
 function changeQuantityOfProduct(rowNumber, order){
-	var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>';
-	$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
+	if (order[rowNumber].quantity == 0) removeProduct(rowNumber, order);
+	else {
+		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>';
+		$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
+	}
 }
 	
 /**
  * Removes product from the order (from the html and the JSON object)
- * rowNumber: string, the number of the product in the order 
+ * rowNumber: int, the number of the product in the order 
  * 				table (WARNING: 1 based indexing)
  * order: JSON object, the order
  */
 function removeProduct(rowNumber, order){
-	// TODO: must decrement the key of all the produts that come in the order JSON object after the deleted product
+	var n = localStorage.numberOfProducts;
+		
+	var key;
+	for (var i=0; i<n; ++i){
+		key=i+1;
+		var next = key+1;
+		if (key >= n) break;
+		if (key < rowNumber) continue;
+		
+		order[key] = order[next];
+	}
+	delete order[key];
+
+	localStorage.numberOfProducts = --n;
+	localStorage.order = JSON.stringify(order);
+
+	$('#orderTable tr').eq(rowNumber).remove();
 }
 
 
