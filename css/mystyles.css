@@ -6,6 +6,7 @@ html, body{
   	-moz-user-select: none;
 	-ms-user-select: none;
   	user-select: none;	
+	cursor: default;
 }
 .jumbotron{
 	background-color: #ffffff;
@@ -61,7 +62,7 @@ html, body{
 	border-color: darkgoldenrod;
   	border-width: 5px;
   	border-style: solid;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 .hidden_border{
 	border-color: white;
