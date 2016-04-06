@@ -60,7 +60,13 @@ html, body{
 }
 .item-highlight{
 	border-color: darkgoldenrod;
-  	border-width: 3px;
+  	border-width: 5px;
+  	border-style: solid;
+	border-radius: 10px;
+}
+.hidden_border{
+	border-color: white;
+  	border-width: 5px;
   	border-style: solid;
 	border-radius: 10px;
 }
@@ -68,7 +74,10 @@ html, body{
 	visibility: hidden;
 }
 .small-margin{
-	margin-top: 10px; 
+	margin-top: 6px; 
+}
+.small-padding{
+	padding: 2px; 
 }
 .btn-circle {
   width: 30px;
