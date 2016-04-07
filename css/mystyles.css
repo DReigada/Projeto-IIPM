@@ -86,7 +86,7 @@ html, body{
 	border-color: darkgoldenrod;
   	border-width: 5px;
   	border-style: solid;
-	border-radius: 15px;
+	border-radius: 30px;
 }
 .hidden_border{
 	border-color: white;
