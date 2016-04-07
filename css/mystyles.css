@@ -131,6 +131,11 @@ html, body{
   width: 100%;
   font-size: 150%;
 }
+.productName{
+  font-size: 130%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 /* ----------- initial options ----------- */
 #bar_menu{
     background:url(../img/menu_logo.png) no-repeat center center;
