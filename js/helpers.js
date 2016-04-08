@@ -5,8 +5,13 @@ var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger sma
  */
 function newProductClicked(product, prev){
 	$("#add_button").removeClass('hidden');
+	
+	$(prev).addClass('hidden_border');
 	$(prev).removeClass('item-highlight');
+	
 	$(product).addClass('item-highlight');
+	$(product).removeClass('hidden_border');
+	
 }
 	
 /**
@@ -15,9 +20,9 @@ function newProductClicked(product, prev){
 function addProductToTable(name, quantity){
 	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
 	var str = '<tr>' + quantityTd + nameTd + DECREMENT_BUTTON_HTML + '</tr>';
-	var div = $(str).appendTo('#orderTable > tbody:last-child');
+	var $div = $(str).appendTo('#orderTable > tbody:last-child');
 	
-	$(div).on("click", function(){
+	$($div).on("click", "button", function(){
 		
 		var order = JSON.parse(sessionStorage.order);
 		
