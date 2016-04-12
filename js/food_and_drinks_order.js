@@ -57,23 +57,23 @@ $(function(){
 		}
 		sessionStorage.order = JSON.stringify(order);
 	});
-		
+
 	$('#orderButton').on('click', function(event) {
 		if (sessionStorage.numberOfProducts == "0") return;
-		
+
 		$('#acceptOrderModal').modal('toggle');
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
     		addProductToAcceptedTable(value["name"], value["quantity"]);
 		});
 	});
-	
+
 	// cancel order button is clicked
 	$('#cancelOptionButton').on('click', function(event) {
-		if (sessionStorage.numberOfProducts == "0") { window.location.href = "/home.html"; return; }
+		if (sessionStorage.numberOfProducts == "0") { window.location.href = "home.html"; return; }
 		$('#cancelOrderModal').modal('toggle');
 	});
-	
+
 	$('#acceptOrderButton').on('click', function(event) {
 		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
@@ -85,13 +85,13 @@ $(function(){
 		}
 		localStorage.order = JSON.stringify(order);
 		sessionStorage.numberOfProducts = 0;
-		
+
 		$("#acceptOrderTable > tbody:last").children().remove();
 		$('#confirmedOrderModal').modal('toggle');
-		
-		
+
+
 	});
-	
+
 	// cancel the order
 	$("#cancelOrderButton").on('click', function(event) {
 		$('#cancelOrderModal').modal('toggle');
@@ -105,16 +105,16 @@ $(function(){
 		localStorage.order = JSON.stringify(order);
 		sessionStorage.numberOfProducts = 0;
 	});
-	
+
 	// doesn't confirm the order
 	$("#notAcceptOrderButton").on('click', function(event) {
 		$("#acceptOrderTable > tbody:last").children().remove();
 	})
-	
+
 	// order confirmed
 	$("#orderConfirmedButton").on('click', function(event) {
 		$('#confirmedOrderModal').modal('toggle');
 		$("#acceptOrderTable > tbody:last").children().remove();
 	})
-	
+
 });
