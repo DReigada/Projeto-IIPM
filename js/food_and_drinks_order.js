@@ -58,19 +58,31 @@ $(function(){
 		}
 		sessionStorage.order = JSON.stringify(order);
 	});
-
+		
 	$('#orderButton').on('click', function(event) {
+		if (sessionStorage.numberOfProducts == "0") return;
+		
+		$('#acceptOrderModal').modal('toggle');
+		var obj = JSON.parse(sessionStorage.order);
+		$.each(obj, function(key, value) {
+    		addProductToAcceptedTable(value["name"], value["quantity"]);
+		});
+	});
+	
+	$('#acceptOrderButton').on('click', function(event) {
+		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
 
-		// if user wants to cancel the order, all product selected will be removed
+		// if user wants to order, all product selected will be removed
 		while (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0") {
 			n = parseInt(sessionStorage.numberOfProducts);
 			removeProduct(n, order);
 		}
-			localStorage.order = JSON.stringify(order);
-			sessionStorage.numberOfProducts = 0;
+		localStorage.order = JSON.stringify(order);
+		sessionStorage.numberOfProducts = 0;
+		console.log("doing somethingg");
 	});
-
+	
 	// cancel the order
 	$("#cancelOrder").on('click', function(event) {
 		var order = JSON.parse(sessionStorage.order);
@@ -83,4 +95,10 @@ $(function(){
 			localStorage.order = JSON.stringify(order);
 			sessionStorage.numberOfProducts = 0;
 	});
+	
+	// doesn't confirm the order
+	$("#notAcceptOrderButton").on('click', function(event) {
+		$("#acceptOrderTable > tbody:last").children().remove();
+		console.log("doing another something");
+	})
 });
