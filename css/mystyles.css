@@ -44,6 +44,9 @@ html, body{
 .three-quarters-vertical-fill{
 	height: 75%;
 }
+.two-thirds-vertical-fill{
+  height: 66.7%;
+}
 .half-vertical-fill{
   height: 50%;
 }
@@ -195,6 +198,7 @@ html, body{
   padding-top: 10px;
 }
 .breadcrumb{
+  margin: 5px;
   font-size: 130%;
   background-color: inherit;
 }
@@ -204,7 +208,11 @@ html, body{
   float: left;
   padding: 10px;
 }
-
+.productsList{
+  width: auto;
+}
 #products{
+  overflow-y: auto;
   width: 100%;
+  height: 100%;
 }
