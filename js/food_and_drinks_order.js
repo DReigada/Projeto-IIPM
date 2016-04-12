@@ -80,6 +80,19 @@ $(function(){
 		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
 
+		var storeOrder = {
+			order: order,
+			price : sessionStorage.orderPrice
+		}
+		var ordersList;
+		if (sessionStorage.ordersList) {
+			ordersList = JSON.parse(sessionStorage.ordersList);
+		}
+		else{
+			ordersList = [];
+		}
+		ordersList.push(storeOrder);
+		sessionStorage.ordersList = JSON.stringify(ordersList);
 		// if user wants to order, all product selected will be removed
 		while (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0") {
 			n = parseInt(sessionStorage.numberOfProducts);
