@@ -17,9 +17,11 @@ function newProductClicked(product, prev){
 /**
  * Adds new product to the order table
  */
-function addProductToTable(name, quantity){
-	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-	var str = '<tr>' + quantityTd + nameTd + DECREMENT_BUTTON_HTML + '</tr>';
+function addProductToTable(name, quantity, price){
+	var quantityTd='<td>' + quantity + '</td>',
+				nameTd='<td>' + name + '</td>',
+				priceTd= '<td>' + price + '€</td>'
+	var str = '<tr>' + quantityTd + nameTd + priceTd + DECREMENT_BUTTON_HTML + '</tr>';
 	var $div = $(str).appendTo('#orderTable > tbody:last-child');
 
 	$($div).on("click", "button", function(){
@@ -42,9 +44,11 @@ function addProductToTable(name, quantity){
 /**
  * Adds new product to the order table
  */
-function addProductToAcceptedTable(name, quantity){
-	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-	var str = '<tr>' + quantityTd + nameTd + '</tr>';
+function addProductToAcceptedTable(name, quantity, price){
+	var quantityTd='<td>' + quantity + '</td>',
+	 			nameTd='<td>' + name + '</td>',
+				priceTd= '<td>' + price + '€</td>';
+	var str = '<tr>' + quantityTd + nameTd + priceTd +'</tr>';
 	$(str).appendTo('#acceptOrderTable > tbody:last-child');
 }
 
@@ -82,7 +86,7 @@ function isProductInTable(name, order){
 function changeQuantityOfProduct(rowNumber, order){
 	if (order[rowNumber].quantity == 0) removeProduct(rowNumber, order);
 	else {
-		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>';
+		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>' + '<td>' + order[rowNumber].price + '€</td>';
 		$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
 	}
 }

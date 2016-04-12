@@ -16,13 +16,13 @@ $(function(){
 		show: false
 	})
 	// determines which product is selected at each moment
-	var selected_id="#option1", selected;
+	var selected_id="#option1", selected, selected_price;
 
 	// Populates table with the current order if it already exists
 	if (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0"){
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
-    		addProductToTable(value["name"], value["quantity"]);
+    		addProductToTable(value["name"], value["quantity"], value["price"]);
 		});
 
 	// Creates the order object if it didn't exist already
@@ -36,6 +36,7 @@ $(function(){
 		newProductClicked(event.delegateTarget, selected_id);
 		selected_id = event.delegateTarget;
 		selected = $(event.delegateTarget).find('.name').html();
+		selected_price = parseInt($(event.delegateTarget).find('.price').html());
 	});
 
 	// Adds product to order if the plus button was clicked
@@ -52,8 +53,8 @@ $(function(){
 		} else { // else adds new row to table
 			sessionStorage.numberOfProducts = ++n;
 
-			order[n] = {'name': selected, 'quantity': 1};
-			addProductToTable(selected, 1);
+			order[n] = {'name': selected, 'quantity': 1, price : selected_price};
+			addProductToTable(selected, 1, selected_price);
 		}
 		sessionStorage.order = JSON.stringify(order);
 	});
@@ -64,7 +65,7 @@ $(function(){
 		$('#acceptOrderModal').modal('toggle');
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
-    		addProductToAcceptedTable(value["name"], value["quantity"]);
+    		addProductToAcceptedTable(value["name"], value["quantity"], value["price"]);
 		});
 	});
 
