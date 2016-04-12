@@ -10,7 +10,11 @@ $(function(){
   		keyboard: false,
 		show: false
 	})
-
+	$('#cancelOrderModal').modal({
+  		backdrop: 'static',
+  		keyboard: false,
+		show: false
+	})
 	// determines which product is selected at each moment
 	var selected_id="#option1", selected;
 
@@ -79,6 +83,12 @@ $(function(){
 		});
 	});
 	
+	// cancel order button is clicked
+	$('#cancelOptionButton').on('click', function(event) {
+		if (sessionStorage.numberOfProducts == "0") { window.location.href = "/home.html"; return; }
+		$('#cancelOrderModal').modal('toggle');
+	});
+	
 	$('#acceptOrderButton').on('click', function(event) {
 		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
@@ -98,16 +108,17 @@ $(function(){
 	});
 	
 	// cancel the order
-	$("#cancelOrder").on('click', function(event) {
+	$("#cancelOrderButton").on('click', function(event) {
+		$('#cancelOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
 
-		// if user wants to cancel the order, all product selected will be removed
+		// if user wants to cancel, all product selected will be removed
 		while (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0") {
 			n = parseInt(sessionStorage.numberOfProducts);
 			removeProduct(n, order);
 		}
-			localStorage.order = JSON.stringify(order);
-			sessionStorage.numberOfProducts = 0;
+		localStorage.order = JSON.stringify(order);
+		sessionStorage.numberOfProducts = 0;
 	});
 	
 	// doesn't confirm the order

@@ -60,6 +60,20 @@
 				</div>
 			</div>
 		</div>
+		<div id="cancelOrderModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4>Are you sure you want to cancel your order?</h4>
+					</div>
+					<div class="modal-footer">
+						<div class="inline" style="padding-right: 20px;"><a href="home.html" role="button" id="cancelOrderButton" class="btn btn-danger btn-lg">Yes</a></div>
+						<div class="inline" style="padding-left: 20px;"><button type="button" class="btn btn-success btn-lg" id="notAcceptOrderButton" data-dismiss="modal">No </button></div>
+					</div>
+				</div>
+			</div>
+		</div>
     	<div class="row row-content vertical-fill">
             <div class="col-xs-8 vertical-fill">
 				<div class="text-horiz-align small-height">
@@ -99,7 +113,7 @@
                     <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
 						<div class="inline"><a href="drinks_menu.html" class="btn btn-primary" role="button">Drinks Menu</a></div>
-            <div class="inline"><a type="button" class="btn btn-danger" href="cancelPage.html">Cancel</a></div>
+            			<div class="inline"><button type="button" class="btn btn-danger" id="cancelOptionButton" data-target="#cancelOrderModal">Cancel</button></div>
 					</div>
                 </div>
             </div>
