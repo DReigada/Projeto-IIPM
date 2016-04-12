@@ -78,27 +78,37 @@
             <div class="col-xs-8 vertical-fill">
 				<div class="text-horiz-align small-height">
 	    			<h2>BarISTa</h2>
-       	</div>
-        <div class="row breadcrumbdiv">
-          <div class="col-xs-1"></div>
-          <ol class="col-xs-10 breadcrumb">
-            <li><a href="home.html">Home</a></li>
-            <li class="active">Bar Menu</li>
-            <li class="active">Drinks Menu</li>
-          </ol>
-        </div>
-        <div class="two-thirds-vertical-fill outer-vertically-align">
-          <div id="products" class="scrollbar inner-vertically-align">
-            <ul class="list container productsList"></ul>
-          </div>
-        </div>
+				</div>
+				<div class="row breadcrumbdiv">
+				  <div class="col-xs-1"></div>
+				  <ol class="col-xs-10 breadcrumb">
+					<li><a href="home.html">Home</a></li>
+					<li class="active">Bar Menu</li>
+					<li class="active">Drinks Menu</li>
+				  </ol>
+				</div>
+				<div class="row row-content two-thirds-vertical-fill">
+					<div class="col-xs-12 filterDiv vertical-fill">
+						<div class="column-flex-container vertical-fill">
+							<div id="filterToggleDiv"><button type="button" class="btn btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible"><i class="glyphicon glyphicon-menu-hamburger"></i></button></div>
+							<div class="collapse" id="filterCollapsible">
+								
+							</div>
+							<div id="companyProducts" class="scrollbar">
+							  <div id="products">
+								<ul class="list container productsList"></ul>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
                 <div class="footer small-height outer-vertically-align">
                     <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
 						<div class="inline"><a href="food_menu.html" class="btn btn-primary" role="button">Food Menu</a></div>
             			<div class="inline"><button type="button" class="btn btn-danger" id="cancelOptionButton" data-target="#cancelOrderModal">Cancel</button></div>
 					</div>
-                </div>
+                </div>					
             </div>
             <div class="col-xs-4 vertical-fill side-bar-container">
       				<div class="almost-vertical-fill side-bar scrollbar">
