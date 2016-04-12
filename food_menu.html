@@ -30,8 +30,9 @@
 								<table class="table" id="acceptOrderTable">
 									<thead>
 										<tr>
-											<th class="col-xs-1">Quantity</th>
-											<th class="col-xs-3">Product</th>
+                      <th class="col-xs-1">Quantity</th>
+											<th class="col-xs-1">Product</th>
+                      <th class="col-xs-1">Price/Un</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -106,9 +107,11 @@
       						<table class="table table-hover" id="orderTable">
           						<thead>
             							<tr>
-              							<th class="col-xs-1"></th>
-              							<th class="col-xs-3">Order</th>
-      									<th class="col-xs-2"></th>
+                            <th class="col-xs-1">Qt.</th>
+              							<th class="col-xs-3">Product</th>
+                            <th class="col-xs-3">Price/Un</th>
+							             <th class="col-xs-2"></th>
+
       								</tr>
       							</thead>
       							<tbody>
@@ -116,6 +119,7 @@
       						</table>
       					</div>
       				</div>
+              <div class="totalPrice">Price: <span id="totalPrice">0</span>€</div>
               <button type="button" id="orderButton" class="btn btn-wide btn-success" data-target="#acceptOrderModal">Order</button>
             </div>
         </div>
