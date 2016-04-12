@@ -18,6 +18,62 @@
 
     <!-- drinks menu -->
     <div class="container vertical-fill">
+		<div id="acceptOrderModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="panel panel-default">
+							<!-- Default panel contents -->
+							<div class="panel-heading"><h3>Do you confirm your order?</h3></div>
+							<div class="panel-body">
+								<table class="table" id="acceptOrderTable">
+									<thead>
+										<tr>
+											<th class="col-xs-1">Quantity</th>
+											<th class="col-xs-3">Product</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="inline" style="padding-right: 20px;"><button type="button" id="acceptOrderButton" class="btn btn-success btn-lg">Yes</button></div>
+							<div class="inline" style="padding-left: 20px;"><button type="button" class="btn btn-danger btn-lg" id="notAcceptOrderButton" data-dismiss="modal">No </button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="confirmedOrderModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4>Your request is in progress, thank you for your choice.</h4>
+					</div>
+					<div class="modal-footer">
+						<div class="inline"><a href="home.html" class="btn btn-primary btn-lg" id="orderConfirmedButton" role="button">Ok</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cancelOrderModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4>Are you sure you want to cancel your order?</h4>
+					</div>
+					<div class="modal-footer">
+						<div class="inline" style="padding-right: 20px;"><a href="home.html" role="button" id="cancelOrderButton" class="btn btn-danger btn-lg">Yes</a></div>
+						<div class="inline" style="padding-left: 20px;"><button type="button" class="btn btn-success btn-lg" id="notAcceptOrderButton" data-dismiss="modal">No </button></div>
+					</div>
+				</div>
+			</div>
+		</div>
     	<div class="row row-content vertical-fill">
             <div class="col-xs-8 vertical-fill">
 				<div class="text-horiz-align small-height">
@@ -40,7 +96,7 @@
                     <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
 						<div class="inline"><a href="food_menu.html" class="btn btn-primary" role="button">Food Menu</a></div>
-            <div class="inline"><a type="button" class="btn btn-danger" href="cancelPage.html">Cancel</a></div>
+            			<div class="inline"><button type="button" class="btn btn-danger" id="cancelOptionButton" data-target="#cancelOrderModal">Cancel</button></div>
 					</div>
                 </div>
             </div>
@@ -60,7 +116,7 @@
       						</table>
       					</div>
       				</div>
-              <a type="button" id="orderButton" class="btn btn-wide btn-success" href="orderAccepted.html">Order</a>
+              <button type="button" id="orderButton" class="btn btn-wide btn-success" data-target="#acceptOrderModal">Order</button>
             </div>
         </div>
     </div>

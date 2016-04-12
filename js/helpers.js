@@ -40,6 +40,15 @@ function addProductToTable(name, quantity){
 }
 
 /**
+ * Adds new product to the order table
+ */
+function addProductToAcceptedTable(name, quantity){
+	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
+	var str = '<tr>' + quantityTd + nameTd + '</tr>';
+	$(str).appendTo('#acceptOrderTable > tbody:last-child');
+}
+
+/**
  * Checks if a certain product is in the table and returns it's position if it is.
  *
  * name: string, name of the product
