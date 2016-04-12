@@ -31,18 +31,18 @@
             <li class="active">Food Menu</li>
           </ol>
         </div>
-                <div class="two-thirds-vertical-fill outer-vertically-align">
-                  <div id="products" class="scrollbar inner-vertically-align">
-                    <ul class="list container productsList"></ul>
-                  </div>
-                </div>
-                <div class="footer small-height outer-vertically-align">
-                    <div class="inner-vertically-align">
+        <div class="two-thirds-vertical-fill outer-vertically-align">
+          <div id="products" class="scrollbar inner-vertically-align">
+            <ul class="list container productsList"></ul>
+          </div>
+        </div>
+        <div class="footer small-height outer-vertically-align">
+          <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
 						<div class="inline"><a href="drinks_menu.html" class="btn btn-primary" role="button">Drinks Menu</a></div>
             <div class="inline"><a type="button" class="btn btn-danger" href="cancelPage.html">Cancel</a></div>
 					</div>
-                </div>
+        </div>
             </div>
             <div class="col-xs-4 vertical-fill side-bar-container">
       				<div class="almost-vertical-fill side-bar scrollbar">
@@ -69,20 +69,9 @@
     <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+  <script src="js/list.js" type="text/javascript"></script>
 	<script src="js/helpers.js" type="text/javascript"></script>
-	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
-  <script src="js/list.js" type="text/javascript">
-
-  </script>
 	<script type="text/javascript">
-    class Product {
-      constructor (name, price, image){
-        this.name = name;
-        this.price = price;
-        this.image = image;
-      };
-    }
-
     var products = [
       new Product("CheeseBurger", "5€", "img/cheeseburger.png"),
       new Product("HotDog", "4€", "img/hotdog.png"),
@@ -94,17 +83,8 @@
       new Product("Kebab", "2€", "img/kebab.png"),
 
     ];
-
-    var options = {
-      valueNames: [
-         "name",
-         "price",
-         { name: 'image', attr: 'src' } ],
-      item: '<li class="productButton hidden_border col-xs-6"><img class="image" height="100" width="100"><h3 class="name"></h3><h4 class="price"></h4></li>'
-    };
-
-    var userList = new List('products', options, products);
-
 	</script>
+  <script src="js/ListProducts.js" type="text/javascript"> </script>
+	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
   </body>
 </html>
