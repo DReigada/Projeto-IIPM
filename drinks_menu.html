@@ -31,36 +31,11 @@
             <li class="active">Drinks Menu</li>
           </ol>
         </div>
-                <div class="outer-vertically-align">
-                    <div class="inner-vertically-align">
-                        <div class="row row-content">
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option1">
-									<div class="text-horiz-align"><h6 class="productName">Beer</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding small-margin"><img src="img/beer.gif" alt="hamburguer" height="100" width="100"></div>
-								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option2">
-									<div class="text-horiz-align"><h6 class="productName">Coca-cola</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding small-margin"><img src="img/coca_cola_cool.png" alt="hamburguer" height="100"></div>
-								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option3">
-									<div class="text-horiz-align"><h6 class="productName">Cocktail</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding small-margin"><img src="img/cocktails.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option4">
-									<div class="text-horiz-align"><h6 class="productName">Shot</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding small-margin"><img src="img/shots.png" alt="hamburguer" height="100" ></div>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="two-thirds-vertical-fill outer-vertically-align">
+          <div id="products" class="scrollbar inner-vertically-align">
+            <ul class="list container productsList"></ul>
+          </div>
+        </div>
                 <div class="footer small-height outer-vertically-align">
                     <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
@@ -97,7 +72,22 @@
     <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<script src="js/helpers.js" type="text/javascript"></script>
-	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
+    <script src="js/list.js" type="text/javascript"></script>
+  	<script src="js/helpers.js" type="text/javascript"></script>
+  	<script type="text/javascript">
+      var products = [
+        new Product("Beer", "5€", "img/beer.gif"),
+        new Product("Cocktail", "4€", "img/cocktails.png"),
+        new Product("Coca-Cola", "2€", "img/cocacola.png"),
+        new Product("Shot", "2€", "img/shots.png"),
+        new Product("Beer", "5€", "img/beer.gif"),
+        new Product("Cocktail", "4€", "img/cocktails.png"),
+        new Product("Coca-Cola", "2€", "img/cocacola.png"),
+        new Product("Shot", "2€", "img/shots.png"),
+      ];
+  	</script>
+    <script src="js/ListProducts.js" type="text/javascript"> </script>
+  	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
+
   </body>
 </html>
