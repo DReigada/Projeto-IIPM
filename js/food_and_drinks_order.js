@@ -82,6 +82,7 @@ $(function(){
 
 		var storeOrder = {
 			order: order,
+			numberOfProducts : sessionStorage.numberOfProducts, 
 			price : sessionStorage.orderPrice
 		}
 		var ordersList;

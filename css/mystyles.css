@@ -177,6 +177,13 @@ html, body{
 	width:200px;
 	border:1px solid black;
 }
+#history_menu{
+    background:url(../img/history.jpg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
 
 /* ----------- order table ------------ */
 .table {
