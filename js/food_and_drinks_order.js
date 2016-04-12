@@ -1,5 +1,15 @@
 $(function(){
-	//sessionStorage.clear();
+	// change the default options of the modals
+	$('#acceptOrderModal').modal({
+  		backdrop: 'static',
+  		keyboard: false,
+		show: false
+	})
+	$('#confirmedOrderModal').modal({
+  		backdrop: 'static',
+  		keyboard: false,
+		show: false
+	})
 
 	// determines which product is selected at each moment
 	var selected_id="#option1", selected;
@@ -80,7 +90,11 @@ $(function(){
 		}
 		localStorage.order = JSON.stringify(order);
 		sessionStorage.numberOfProducts = 0;
-		console.log("doing somethingg");
+		
+		$("#acceptOrderTable > tbody:last").children().remove();
+		$('#confirmedOrderModal').modal('toggle');
+		
+		
 	});
 	
 	// cancel the order
@@ -99,6 +113,12 @@ $(function(){
 	// doesn't confirm the order
 	$("#notAcceptOrderButton").on('click', function(event) {
 		$("#acceptOrderTable > tbody:last").children().remove();
-		console.log("doing another something");
 	})
+	
+	// order confirmed
+	$("#orderConfirmedButton").on('click', function(event) {
+		$('#confirmedOrderModal').modal('toggle');
+		$("#acceptOrderTable > tbody:last").children().remove();
+	})
+	
 });
