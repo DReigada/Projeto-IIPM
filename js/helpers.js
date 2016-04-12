@@ -23,6 +23,7 @@ function addProductToTable(name, quantity, price){
 				priceTd= '<td>' + price + '€</td>'
 	var str = '<tr>' + quantityTd + nameTd + priceTd + DECREMENT_BUTTON_HTML + '</tr>';
 	var $div = $(str).appendTo('#orderTable > tbody:last-child');
+	$(".totalPrice").html(sessionStorage["orderPrice"]);
 
 	$($div).on("click", "button", function(){
 
@@ -88,7 +89,7 @@ function changeQuantityOfProduct(rowNumber, order){
 		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>' + '<td>' + order[rowNumber].price + '€</td>';
 		$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
 	}
-	$("#totalPrice").html(sessionStorage["orderPrice"]);
+	$(".totalPrice").html(sessionStorage["orderPrice"]);
 }
 
 /**

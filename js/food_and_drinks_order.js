@@ -23,7 +23,7 @@ $(function(){
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
     		addProductToTable(value["name"], value["quantity"], value["price"]);
-		$("#totalPrice").html(sessionStorage["orderPrice"]);
+		$(".totalPrice").html(sessionStorage["orderPrice"]);
 		});
 	// Creates the order object if it didn't exist already
 	} else {

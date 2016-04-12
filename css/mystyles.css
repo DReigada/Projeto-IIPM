@@ -221,11 +221,16 @@ html, body{
   margin-right: 30px;
   float: left;
 }
-.totalPrice{
+.totalPriceDiv{
   text-align: center;
   font-size: 130%;
   margin: 5px;
 }
 #orderButton{
   margin: 0;
+}
+.modalTotalPrice{
+  font-size: 120%;
+  padding-top: 20px;
+  float: right;
 }
