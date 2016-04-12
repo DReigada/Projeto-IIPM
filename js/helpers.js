@@ -27,14 +27,13 @@ function addProductToTable(name, quantity, price){
 	$($div).on("click", "button", function(){
 
 		var order = JSON.parse(sessionStorage.order);
-
 		var $tr = $(this).closest('tr'); // gets the tr element of the clicked button
 		var rowIndex = $tr.index() + 1;      // gets the row number of the clicked button
 
 		// decrease the quantity in the order object
 		order[rowIndex].quantity = order[rowIndex].quantity - 1;
 		sessionStorage.order = JSON.stringify(order);
-
+		sessionStorage["orderPrice"] = parseInt(sessionStorage["orderPrice"]) - parseInt(order[rowIndex].price);
 		// decrease the quantity in the order table (deletes product if quantity is 0)
 		changeQuantityOfProduct(rowIndex, order);
 
@@ -89,6 +88,7 @@ function changeQuantityOfProduct(rowNumber, order){
 		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>' + '<td>' + order[rowNumber].price + '€</td>';
 		$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
 	}
+	$("#totalPrice").html(sessionStorage["orderPrice"]);
 }
 
 /**

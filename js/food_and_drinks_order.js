@@ -23,12 +23,13 @@ $(function(){
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
     		addProductToTable(value["name"], value["quantity"], value["price"]);
+		$("#totalPrice").html(sessionStorage["orderPrice"]);
 		});
-
 	// Creates the order object if it didn't exist already
 	} else {
 		sessionStorage.numberOfProducts = 0;
 		sessionStorage.order=JSON.stringify({});
+		sessionStorage["orderPrice"] = 0;
 	}
 
 	// Looks for clicks on the products and highlights if clicked
@@ -44,7 +45,7 @@ $(function(){
 		// retrieves the order and the number of products there in from the local storage
 		var order = JSON.parse(sessionStorage.order), n = Number(sessionStorage.numberOfProducts);
 		var pos = isProductInTable(selected, order);
-
+		sessionStorage["orderPrice"] = parseInt(sessionStorage["orderPrice"]) + selected_price;
 		// if user wants to add product that is already in table, simply increment quantity value
 		if (pos != -1){
 			order[pos].quantity = order[pos].quantity + 1;
