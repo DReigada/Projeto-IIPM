@@ -31,35 +31,38 @@
             <li class="active">Food Menu</li>
           </ol>
         </div>
-                <div class="outer-vertically-align">
-                    <div class="inner-vertically-align">
+                <div class="half-vertical-fill outer-vertically-align">
+                    <!--<div class="inner-vertically-align">
                         <div class="row row-content">
                             <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option1">
-									<div class="text-horiz-align"><h6 class="productName">Cheeseburger</h6></div>
-                                	<div class="center-horiz-div"><img src="img/cheeseburger.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
+              								<div class="on-hover hidden_border small-padding" id="option1">
+              									<div class="text-horiz-align"><h6 class="productName">Cheeseburger</h6></div>
+                                <div class="center-horiz-div"><img src="img/cheeseburger.png" alt="hamburguer" height="100" width="100"></div>
+								              </div>
                             </div>
                             <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option2">
-									<div class="text-horiz-align"><h6 class="productName">HotDog</h6></div>
-                                	<div class="center-horiz-div"><img src="img/hotdog.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
+              								<div class="on-hover hidden_border small-padding" id="option2">
+              									<div class="text-horiz-align"><h6 class="productName">HotDog</h6></div>
+                                <div class="center-horiz-div"><img src="img/hotdog.png" alt="hamburguer" height="100" width="100"></div>
+								              </div>
                             </div>
                             <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option3">
-									<div class="text-horiz-align"><h6 class="productName">Chips</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding"><img src="img/chips.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
+              								<div class="on-hover hidden_border small-padding" id="option3">
+              									<div class="text-horiz-align"><h6 class="productName">Chips</h6></div>
+                                <div class="center-horiz-div on-hover small-padding"><img src="img/chips.png" alt="hamburguer" height="100" width="100"></div>
+								              </div>
                             </div>
                             <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option4">
-									<div class="text-horiz-align"><h6 class="productName">Kebab</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding"><img src="img/kebab.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
+								              <div class="on-hover hidden_border small-padding" id="option4">
+									              <div class="text-horiz-align"><h6 class="productName">Kebab</h6></div>
+                                <div class="center-horiz-div on-hover small-padding"><img src="img/kebab.png" alt="hamburguer" height="100" width="100"></div>
+								              </div>
                             </div>
                         </div>
-                    </div>
+                      -->
+                      <div id="products">
+                        <ul class="list container"></ul>
+                      </div>
                 </div>
                 <div class="footer small-height outer-vertically-align">
                     <div class="inner-vertically-align">
@@ -89,9 +92,6 @@
             </div>
         </div>
     </div>
-	<script type="text/javascript">
-		var option1 = "CheeseBurger", option2 = "HotDog", option3 = "Potato chips", option4 = "Kebab";
-	</script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.2.min.js"></script>
@@ -99,5 +99,41 @@
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/helpers.js" type="text/javascript"></script>
 	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
+  <script src="js/list.js" type="text/javascript">
+
+  </script>
+	<script type="text/javascript">
+		var option1 = "CheeseBurger", option2 = "HotDog", option3 = "Potato chips", option4 = "Kebab";
+    class Product {
+      constructor (name, price, image){
+        this.name = name;
+        this.price = price;
+        this.image = image;
+      };
+    }
+
+    var products = [
+      new Product("CheeseBurger", "5€", "img/cheeseburger.png"),
+      new Product("HotDog", "4€", "img/hotdog.png"),
+      new Product("Potato chips", "2€", "img/chips.png"),
+      new Product("HotDog", "4€", "img/hotdog.png"),
+      new Product("CheeseBurger", "5€", "img/cheeseburger.png"),
+      new Product("HotDog", "4€", "img/hotdog.png"),
+      new Product("Potato chips", "2€", "img/chips.png"),
+      new Product("HotDog", "4€", "img/hotdog.png"),
+
+    ];
+
+    var options = {
+      valueNames: [
+         "name",
+         "price",
+         { name: 'image', attr: 'src' } ],
+      item: '<li class="productButton col-xs-6"><img class="image" height="100" width="100"><h3 class="name"></h3><p class="price"></p></li>'
+    };
+
+    var userList = new List('products', options, products);
+
+	</script>
   </body>
 </html>

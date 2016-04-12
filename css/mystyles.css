@@ -198,3 +198,13 @@ html, body{
   font-size: 130%;
   background-color: inherit;
 }
+
+.list li{
+  display: inline;
+  float: left;
+  padding: 10px;
+}
+
+#products{
+  width: 100%;
+}

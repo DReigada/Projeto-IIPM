@@ -18,25 +18,10 @@ $(function(){
 	}
 
 	// Looks for clicks on the products and highlights if clicked
-	$("#option1").on("click", function(){
-		newProductClicked("#option1", selected_id);
-		selected_id = "#option1";
-		selected = option1;
-	});
-	$("#option2").on("click", function(){
-		newProductClicked("#option2", selected_id);
-		selected_id = "#option2";
-		selected = option2;
-	});
-	$("#option3").on("click", function(){
-		newProductClicked("#option3", selected_id);
-		selected_id = "#option3";
-		selected = option3;
-	});
-	$("#option4").on("click", function(){
-		newProductClicked("#option4", selected_id);
-		selected_id = "#option4";
-		selected = option4;
+	$(".productButton").on("click", function(event){
+		newProductClicked(event.delegateTarget, selected_id);
+		selected_id = event.delegateTarget;
+		selected = $(event.delegateTarget).find('.name').html();
 	});
 
 	// Adds product to order if the plus button was clicked
