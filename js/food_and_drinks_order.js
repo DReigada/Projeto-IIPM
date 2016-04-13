@@ -1,4 +1,5 @@
 $(function(){
+	
 	// change the default options of the modals
 	$('#acceptOrderModal').modal({
   		backdrop: 'static',
