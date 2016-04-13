@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BarISTa</title>
+
+    <link rel="stylesheet" type="text/css" href="css/table.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="table" class="container">
+      <button type="button" id="topButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="bottomButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="leftButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+      <button type="button" id="rightButton" class="btn btn-primary newWindowButton"><img class="fingerprintImg" src="img/fingerprint.png" />New window</button>
+    </div>
+
+<script id="windowTemplate" type="text/template">
+    <div class="windowDraggable">
+      <div class="window">
+        <div class="windowHandle">
+          <button type="button" class="btn btn-danger exitButton"><span class="glyphicon glyphicon-remove"></span></button>
+          <button type="button" class="btn btn-info rotateButton" style="float: right;"><span class="glyphicon glyphicon-refresh"></span></button>
+        </div>
+        <iframe class="windowiframe" scrolling="no" src="home.html"></iframe>
+      </div>
+    <div>
+</script>
+
+    <!-- jQuery -->
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- jQuery plugin to use transforms easily -->
+    <script src="js/jquery.transform2d.js"></script>
+    <!-- script to crete new windows-->
+    <script type="text/javascript" src="js/createWindow.js"></script>
+  </body>
+</html>
