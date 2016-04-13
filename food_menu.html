@@ -9,7 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+	 
+	<link href="css/bootstrap-switch.min.css" rel="stylesheet">
     <!-- Custom css-->
     <link href="css/mystyles.css" rel="stylesheet">
 
@@ -87,11 +88,69 @@
             <li class="active">Food Menu</li>
           </ol>
         </div>
-        <div class="two-thirds-vertical-fill outer-vertically-align">
-          <div id="products" class="scrollbar inner-vertically-align">
-            <ul class="list container productsList"></ul>
-          </div>
-        </div>
+        <div class="row row-content two-thirds-vertical-fill">
+					<div class="col-xs-12 filterDiv vertical-fill">
+						<div id="products" class="vertical-fill">
+						<div class="column-flex-container vertical-fill">
+							<div id="filterToggleDiv">
+								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
+							</div>
+							<div class="collapse filter-class-collapse" id="filterCollapsible">
+								<div class="vertical-fill">
+								<div class="row-flex-container almost-vertical-fill medium-margin-top" id="filterOptionsDiv">
+									<div id="searchSection" class="column-flex-container">
+										<div id="searchBox" class="input-group input-group-sm row-flex-container flex-center-items search">
+											<input type="search" name="productSearch" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+											<span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-search"></i></span>
+										</div>
+										<div id="sortProducts" class="row-flex-container flex-center-items flex-wrap">
+											<hr>
+											<div id="sortBy"><div style="padding-left: 30px;"><h5>Sort by:</h5></div></div>
+											<div class="radio-inline">
+												<label><input type="radio" name="sortRadio" class="sort" data-sort="name">Name</label>
+											</div>
+											<div class="radio-inline">
+												<label><input class="sort" data-sort="price" type="radio" name="sortRadio">Price</label>
+											</div>
+										</div>
+									</div>
+									<div id="filterSection" class="row-flex-container flex-center-items flex-wrap-reverse flex-align-content-center">
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="entree" type="radio" name="categoryRadio">Entrées</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="dessert" type="radio" name="categoryRadio">Dessert</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="appetizer" type="radio" name="categoryRadio">Appetizers/Siders</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="salad" type="radio" name="categoryRadio">Salads</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="noCategorySelected" type="radio" name="categoryRadio" checked="true">None</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+							<div id="companyProducts" class="scrollbar row-flex-container">
+								<ul class="list container productsList"></ul>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
         <div class="footer small-height outer-vertically-align">
           <div class="inner-vertically-align">
 						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
@@ -120,8 +179,6 @@
             </div>
         </div>
     </div>
-	
-	<script src="css/bootstrap-switch.min.css"></script>
     <script src="js/bootstrap-switch.min.js"></script>
 	  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -132,19 +189,24 @@
 	<script src="js/helpers.js" type="text/javascript"></script>
 	<script type="text/javascript">
     var products = [
-      new Product("CheeseBurger", "5€", "img/cheeseburger.png"),
-      new Product("HotDog", "4€", "img/hotdog.png"),
-      new Product("Potato chips", "2€", "img/chips.png"),
-      new Product("Kebab", "2€", "img/kebab.png"),
-      new Product("CheeseBurger", "5€", "img/cheeseburger.png"),
-      new Product("HotDog", "4€", "img/hotdog.png"),
-      new Product("Potato chips", "2€", "img/chips.png"),
-      new Product("Kebab", "2€", "img/kebab.png"),
+      new Product("CheeseBurger1", "5€", "img/cheeseburger.png", "false", "entree"),
+      new Product("HotDog1", "4€", "img/hotdog.png", "false", "entree"),
+      new Product("Potato chips1", "2€", "img/chips.png", "false", "appetizer"),
+      new Product("Kebab", "2€", "img/kebab.png", "false", "entree"),
+      new Product("CheeseBurger2", "5€", "img/cheeseburger.png", "false", "entree"),
+      new Product("HotDog2", "4€", "img/hotdog.png", "false", "entree"),
+      new Product("Potato chips2", "2€", "img/chips.png", "false", "entree"),
+      new Product("Kebab2", "2€", "img/kebab.png", "false", "entree"),
+	  new Product("Ice-cream", "10€", "img/kebab.png", "false", "dessert"),
+      new Product("Bread", "9€", "img/cheeseburger.png", "false", "appetizer"),
+      new Product("Tuna Salad", "12€", "img/hotdog.png", "false", "salad"),
+      new Product("Chicken Salad", "13€", "img/chips.png", "false", "salad"),
+      new Product("Pudding", "7€", "img/kebab.png", "false", "dessert"),
 
     ];
 	</script>
   <script src="js/ListProducts.js" type="text/javascript"> </script>
   <script src="js/food_and_drinks_order.js" type="text/javascript"></script>
-  <script src="js/filters.js" type="text/javascript"></script>
+  <script src="js/filterFood.js" type="text/javascript"></script>
   </body>
 </html>

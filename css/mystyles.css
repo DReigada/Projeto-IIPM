@@ -8,6 +8,14 @@ html, body{
   	user-select: none;
 	cursor: default;
 }
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:grey;
+  height: 1px;
+}
 .jumbotron{
 	background-color: #ffffff;
 }

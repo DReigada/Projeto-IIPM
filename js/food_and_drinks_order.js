@@ -1,6 +1,4 @@
 $(function(){
-	//activate the switch
-	$("[name='my-checkbox']").bootstrapSwitch();
 	
 	// change the default options of the modals
 	$('#acceptOrderModal').modal({
