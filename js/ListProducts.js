@@ -1,4 +1,4 @@
-$(function(){
+
   var options = {
     valueNames: [
        "name",
@@ -11,4 +11,4 @@ $(function(){
   };
 
   var userList = new List('products', options, products);
-});
+

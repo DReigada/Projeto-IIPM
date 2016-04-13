@@ -101,13 +101,13 @@
 								<div class="row-flex-container almost-vertical-fill medium-margin-top" id="filterOptionsDiv">
 									<div id="searchSection" class="column-flex-container">
 										<div id="searchBox" class="input-group input-group-sm row-flex-container flex-center-items search">
-											<input type="text" name="productSearch" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
+											<input type="search" name="productSearch" class="form-control" placeholder="Search" aria-describedby="sizing-addon2">
 											<span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-search"></i></span>
 										</div>
 										<div id="alcoholToggle" class="row-flex-container">
 											<div><h5>Alcohol:</h5></div>
 											<div  style="padding-left: 10px;">
-												<input type="checkbox" data-size="mini" name="alcohol-checkbox" checked>
+												<input type="checkbox" data-indeterminate="true" data-size="mini" name="alcohol-checkbox">
 											</div>
 										</div>
 										<div id="sortProducts" class="row-flex-container flex-center-items flex-wrap">
@@ -123,22 +123,22 @@
 									<div id="filterSection" class="row-flex-container flex-center-items flex-wrap-reverse flex-align-content-center">
 										<div class="a-filter">
 											<div class="radio">
-												<label><input type="radio" name="categoryRadio">Beer</label>
+												<label><input id="beer" type="radio" name="categoryRadio">Beer</label>
 											</div>
 										</div>
 										<div class="a-filter">
 											<div class="radio">
-												<label><input type="radio" name="categoryRadio">Wine</label>
+												<label><input id="wine" type="radio" name="categoryRadio">Wine</label>
 											</div>
 										</div>
 										<div class="a-filter">
 											<div class="radio">
-												<label><input type="radio" name="categoryRadio">Spirits</label>
+												<label><input id="spirits" type="radio" name="categoryRadio">Spirits</label>
 											</div>
 										</div>
 										<div class="a-filter">
 											<div class="radio">
-												<label><input type="radio" name="categoryRadio">Soda</label>
+												<label><input id="soda" type="radio" name="categoryRadio">Soda</label>
 											</div>
 										</div>
 										<div class="a-filter">
@@ -195,16 +195,16 @@
   	<script src="js/helpers.js" type="text/javascript"></script>
   	<script type="text/javascript">
       var products = [
-        new Product("Beer1", "5€", "img/beer.gif", "true", "beer"),
-        new Product("Cocktail1", "10€", "img/cocktails.png", "true", "spirits"),
-        new Product("Coca-Cola1", "1€", "img/cocacola.png", "false", "soda"),
-        new Product("Shot1", "2€", "img/shots.png", "true", "spirits"),
+        new Product("Beer1", "7€", "img/beer.gif", "true", "beer"),
+        new Product("Cocktail1", "8€", "img/cocktails.png", "true", "spirits"),
+        new Product("Coca-Cola1", "3€", "img/cocacola.png", "false", "soda"),
+        new Product("Shot1", "1€", "img/shots.png", "true", "spirits"),
         new Product("Beer2", "5€", "img/beer.gif", "true", "beer"),
-        new Product("Cocktail2", "8€", "img/cocktails.png", "true", "spirits"),
-        new Product("Coca-Cola2", "3€", "img/cocacola.png", "false", "soda"),
+        new Product("Cocktail2", "10€", "img/cocktails.png", "true", "spirits"),
+        new Product("Coca-Cola2", "6€", "img/cocacola.png", "false", "soda"),
         new Product("Shot2", "4€", "img/shots.png", "true", "spirits"),
-		new Product("Wine1", "15€", "img/shots.png", "true", "wine"),
-		new Product("Wine2", "20€", "img/shots.png", "true", "wine"),
+		new Product("Wine1", "20€", "img/shots.png", "true", "wine"),
+		new Product("Wine2", "15€", "img/shots.png", "true", "wine"),
 		new Product("Water", "2€", "img/shots.png", "false", "soda"),
 		 
       ];
