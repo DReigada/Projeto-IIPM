@@ -295,7 +295,7 @@ html, body{
 	flex-shrink: 1;																/**/
 }
 .a-filter{
-	width: 160px;
+	width: 40%;
 	height: 30px;
 	display: flex;
 	justify-content: center;
