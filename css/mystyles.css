@@ -29,7 +29,11 @@ html, body{
 .inner-vertically-align{
     align-self: center;
 }
-
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 /* ----------- relative vertical fills ----------- */
 .vertical-fill{
     height: 100%;
@@ -39,6 +43,9 @@ html, body{
 }
 .three-quarters-vertical-fill{
 	height: 75%;
+}
+.half-vertical-fill{
+  height: 50%;
 }
 .small-height{
     height: 10%;
@@ -181,4 +188,13 @@ html, body{
   margin: 0 auto;
   text-align: center;
   padding-top: 20%;
+}
+
+/* --------- Breadcrumbs -----------*/
+.breadcrumbdiv{
+  padding-top: 10px;
+}
+.breadcrumb{
+  font-size: 130%;
+  background-color: inherit;
 }
