@@ -20,7 +20,9 @@ html, body{
 .text-horiz-align{
 	text-align: center;
 }
-
+.input-group-addon{
+	min-width: 32px;
+}
 /* ----------- vertical alignement ----------- */
 .outer-vertically-align{
     display: flex;
@@ -240,6 +242,9 @@ html, body{
 .flex-wrap{
 	flex-wrap: wrap;
 }
+.flex-wrap-reverse{
+	flex-wrap: wrap-reverse;
+}
 .flex-align-content-center{
 	align-content: center;
 }
@@ -265,14 +270,16 @@ html, body{
 	width: 250px;																/**/
 	flex-shrink: 2;																/**/
 	justify-content: center;
-	align-items: stretch;
+	align-items: center;
 	border-right: 1px solid black;
 }	
 #searchBox{
-	height: 50px;
+
 }
 #alcoholToggle{
 	height: 50px;
+	align-items: center;
+	justify-content: space-around;
 }
 #sortProducts{
 	align-content: space-between;
