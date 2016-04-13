@@ -110,6 +110,9 @@ html, body{
 .small-margin{
 	margin-top: 6px;
 }
+.medium-margin-top{
+	margin-top: 10px;
+}
 .small-padding{
 	padding: 2px;
 }
@@ -220,23 +223,73 @@ html, body{
   float: left;
 }
 
-/* ------- Filter (flex) -------- */
-.filterButton {
-	float: right;
-}
+/* ------- Filter (flex) ------------------------------------------------------*/
+.filterButton {																	/**/
+	float: right;																/**/
+}																				/**/
 .column-flex-container{
-	display: flex;
-	flex-direction: column;
+	display: flex;																/**/
+	flex-direction: column;														/**/
+}																				/**/
+.row-flex-container{
+	display: flex;																/**/
 }
-#filterToggleDiv {
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.flex-align-content-center{
+	align-content: center;
+}
+.flex-center-items{
+	justify-content: center;
+	align-items: center;
+}
+#filterToggleDiv {																/**/
+	height: 35px;					
+}																				/**/
+#filterCollapsible{																/**/
+	height: 200px;																/**/
+	margin: 8px 0px;
+	border-style: solid;
+	border-color: dimgrey;
+	border-width: 1px;
+	border-radius: 3px
+}																				/**/
+#filterOptionsDiv{																/**/
+}
+/* --- Search section --- */
+#searchSection{																	/**/
+	width: 250px;																/**/
+	flex-shrink: 2;																/**/
+	justify-content: center;
+	align-items: stretch;
+}	
+#searchBox{
 	height: 50px;
 }
-#filterCollapsible{
-	min-height: 200px;
-	background-color: red;
+#emptyDiv{
+	height: 10px;
 }
-#companyProducts{
-	flex: 1;
+#alcoholToggle{
+	height: 50px;
+}
+/* --- Actual filters section --- */
+#filterSection{																	/**/													
+	width: 300px;
+	flex: 1;																	/**/
+	flex-shrink: 1;																/**/
+}
+.a-filter{
+	width: 150px;
+	height: 30px;
 	display: flex;
-	overflow-y: auto;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
 }
+
+/* ---- The list of products that might be filtered ---- */
+#companyProducts{
+	flex: 1;																	/**/
+	overflow-y: auto;															/**/
+}																				/**/
