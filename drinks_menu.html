@@ -91,70 +91,55 @@
 				</div>
 				<div class="row row-content two-thirds-vertical-fill">
 					<div class="col-xs-12 filterDiv vertical-fill">
+						<div id="products" class="vertical-fill">
 						<div class="column-flex-container vertical-fill">
 							<div id="filterToggleDiv">
 								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
 							</div>
 							<div class="collapse filter-class-collapse" id="filterCollapsible">
-								<div class="row-flex-container vertical-fill" id="filterOptionsDiv">
+								<div class="vertical-fill">
+								<div class="row-flex-container almost-vertical-fill medium-margin-top" id="filterOptionsDiv">
 									<div id="searchSection" class="column-flex-container">
-										<div id="searchBox" class="row-flex-container flex-center-items"><input type="text" placeholder="Search"></div>
-										<div id="emptyDiv"></div>
-										<div id="alcoholToggle" class="row-flex-container flex-center-items"><h4>Alcohol: </h4><div style="padding-left: 10px;"><input type="checkbox" name="my-checkbox" checked></div></div>
+										<div id="searchBox" class="row-flex-container flex-center-items search"><input type="text" placeholder="Search"></div>
+										<div id="alcoholToggle" class="row-flex-container flex-center-items"><h5>Alcohol: </h5><div style="padding-left: 10px;"><input type="checkbox" name="my-checkbox" checked></div></div>
+										<div id="sortProducts" class="row-flex-container flex-center-items flex-wrap">
+											<div id="sortBy"><div style="padding-left: 40px;"><h5>Sort by:</h5></div></div>
+											<div class="radio-inline">
+												<label><input type="radio" name="sortRadio" class="sort" data-sort="name">Name</label>
+											</div>
+											<div class="radio-inline">
+												<label><input class="sort" data-sort="price" type="radio" name="sortRadio">Price</label>
+											</div>
+										</div>
 									</div>
 									<div id="filterSection" class="row-flex-container flex-center-items flex-wrap flex-align-content-center">
 										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
+											<div class="radio">
+												<label><input type="radio" name="categoryRadio">Beer </label>
 											</div>
 										</div>
 										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
+											<div class="radio">
+												<label><input type="radio" name="categoryRadio">Wine </label>
 											</div>
 										</div>
 										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
+											<div class="radio">
+												<label><input type="radio" name="categoryRadio">Spirits</label>
 											</div>
 										</div>
 										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
-											</div>
-										</div>
-										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
-											</div>
-										</div>
-										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
-											</div>
-										</div>
-										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
-											</div>
-										</div>
-										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
-											</div>
-										</div>
-										<div class="a-filter">
-											<div class="checkbox">
-												<label><input type="checkbox" value="">Option 1</label>
+											<div class="radio">
+												<label><input type="radio" name="categoryRadio">Soda </label>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							</div>
 							<div id="companyProducts" class="scrollbar row-flex-container">
-							  <div id="products">
 								<ul class="list container productsList"></ul>
-							  </div>
+							</div>
 							</div>
 						</div>
 					</div>

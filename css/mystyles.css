@@ -226,7 +226,10 @@ html, body{
 /* ------- Filter (flex) ------------------------------------------------------*/
 .filterButton {																	/**/
 	float: right;																/**/
-}																				/**/
+}
+.align-items{
+	align-items: center;
+}
 .column-flex-container{
 	display: flex;																/**/
 	flex-direction: column;														/**/
@@ -263,15 +266,20 @@ html, body{
 	flex-shrink: 2;																/**/
 	justify-content: center;
 	align-items: stretch;
+	border-right: 1px solid black;
 }	
 #searchBox{
 	height: 50px;
 }
-#emptyDiv{
-	height: 10px;
-}
 #alcoholToggle{
 	height: 50px;
+}
+#sortProducts{
+	align-content: space-between;
+	justify-content: space-around;
+}
+#sortBy{
+	width: 100%;
 }
 /* --- Actual filters section --- */
 #filterSection{																	/**/													
@@ -280,7 +288,7 @@ html, body{
 	flex-shrink: 1;																/**/
 }
 .a-filter{
-	width: 150px;
+	width: 160px;
 	height: 30px;
 	display: flex;
 	justify-content: center;
