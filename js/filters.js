@@ -15,4 +15,6 @@ $(function(){
 		$('input[name="alcohol-checkbox"]').bootstrapSwitch('state', true, true);
 		$('#noCategorySelected').prop('checked',true);
 	})
+	
+	
 });

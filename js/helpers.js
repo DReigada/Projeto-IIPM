@@ -114,9 +114,11 @@ function removeProduct(rowNumber, order){
 }
 
 class Product {
-  constructor (name, price, image){
+  constructor (name, price, image, alcohol, category){
     this.name = name;
     this.price = price;
     this.image = image;
+	this.alcohol = alcohol;
+	this.category = category;
   };
 }
