@@ -1,3 +1,4 @@
+// userList is defined in different file
 $(function(){
 	
 	$('[name="categoryRadio"]').on('click', function(event){
