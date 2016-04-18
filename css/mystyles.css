@@ -8,6 +8,14 @@ html, body{
   	user-select: none;
 	cursor: default;
 }
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:grey;
+  height: 1px;
+}
 .jumbotron{
 	background-color: #ffffff;
 }
@@ -20,7 +28,9 @@ html, body{
 .text-horiz-align{
 	text-align: center;
 }
-
+.input-group-addon{
+	min-width: 32px;
+}
 /* ----------- vertical alignement ----------- */
 .outer-vertically-align{
     display: flex;
@@ -39,7 +49,7 @@ html, body{
     height: 100%;
 }
 .almost-vertical-fill{
-    height: 87%;
+    height: 84%;
 }
 .three-quarters-vertical-fill{
 	height: 75%;
@@ -65,7 +75,7 @@ html, body{
 .side-bar{
     margin-top: 10px;
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 0px;
     border: 1px solid black;
     border-radius: 25px;
     overflow: auto;
@@ -109,6 +119,9 @@ html, body{
 }
 .small-margin{
 	margin-top: 6px;
+}
+.medium-margin-top{
+	margin-top: 10px;
 }
 .small-padding{
 	padding: 2px;
@@ -177,6 +190,13 @@ html, body{
 	width:200px;
 	border:1px solid black;
 }
+#history_menu{
+    background:url(../img/history.jpg) no-repeat center center;
+    background-size: contain;
+	height:200px;
+	width:200px;
+	border:1px solid black;
+}
 
 /* ----------- order table ------------ */
 .table {
@@ -212,12 +232,109 @@ html, body{
   width: auto;
 }
 #products{
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
+  min-height: min-content;
 }
 .productButton img{
   margin: 10px;
   margin-right: 30px;
   float: left;
 }
+
+.totalPriceDiv{
+  text-align: center;
+  font-size: 130%;
+  margin: 5px;
+}
+#orderButton{
+  margin: 0;
+}
+.modalTotalPrice{
+  font-size: 120%;
+  padding-top: 20px;
+  float: right;
+}
+
+
+/* ------- Filter (flex) ------------------------------------------------------*/
+.filterButton {																	/**/
+	float: right;																/**/
+}
+.align-items{
+	align-items: center;
+}
+.column-flex-container{
+	display: flex;																/**/
+	flex-direction: column;														/**/
+}																				/**/
+.row-flex-container{
+	display: flex;																/**/
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.flex-wrap-reverse{
+	flex-wrap: wrap-reverse;
+}
+.flex-align-content-center{
+	align-content: center;
+}
+.flex-center-items{
+	justify-content: center;
+	align-items: center;
+}
+#filterToggleDiv {																/**/
+	height: 35px;					
+}																				/**/
+#filterCollapsible{																/**/
+	height: 200px;																/**/
+	margin: 8px 0px;
+	border-style: solid;
+	border-color: dimgrey;
+	border-width: 1px;
+	border-radius: 3px
+}																				/**/
+#filterOptionsDiv{																/**/
+}
+/* --- Search section --- */
+#searchSection{																	/**/
+	width: 250px;																/**/
+	flex-shrink: 2;																/**/
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid black;
+}	
+#searchBox{
+
+}
+#alcoholToggle{
+	height: 50px;
+	align-items: center;
+	justify-content: space-around;
+}
+#sortProducts{
+	align-content: space-between;
+	justify-content: space-around;
+}
+#sortBy{
+	width: 100%;
+}
+/* --- Actual filters section --- */
+#filterSection{																	/**/													
+	width: 300px;
+	flex: 1;																	/**/
+	flex-shrink: 1;																/**/
+}
+.a-filter{
+	width: 40%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+}
+
+/* ---- The list of products that might be filtered ---- */
+#companyProducts{
+	flex: 1;																	/**/
+	overflow-y: auto;															/**/
+}																				/**/

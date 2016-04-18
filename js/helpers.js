@@ -17,22 +17,24 @@ function newProductClicked(product, prev){
 /**
  * Adds new product to the order table
  */
-function addProductToTable(name, quantity){
-	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-	var str = '<tr>' + quantityTd + nameTd + DECREMENT_BUTTON_HTML + '</tr>';
+function addProductToTable(name, quantity, price){
+	var quantityTd='<td>' + quantity + '</td>',
+				nameTd='<td>' + name + '</td>',
+				priceTd= '<td>' + price + '€</td>'
+	var str = '<tr>' + quantityTd + nameTd + priceTd + DECREMENT_BUTTON_HTML + '</tr>';
 	var $div = $(str).appendTo('#orderTable > tbody:last-child');
+	$(".totalPrice").html(sessionStorage["orderPrice"]);
 
 	$($div).on("click", "button", function(){
 
 		var order = JSON.parse(sessionStorage.order);
-
 		var $tr = $(this).closest('tr'); // gets the tr element of the clicked button
 		var rowIndex = $tr.index() + 1;      // gets the row number of the clicked button
 
 		// decrease the quantity in the order object
 		order[rowIndex].quantity = order[rowIndex].quantity - 1;
 		sessionStorage.order = JSON.stringify(order);
-
+		sessionStorage["orderPrice"] = parseInt(sessionStorage["orderPrice"]) - parseInt(order[rowIndex].price);
 		// decrease the quantity in the order table (deletes product if quantity is 0)
 		changeQuantityOfProduct(rowIndex, order);
 
@@ -42,9 +44,11 @@ function addProductToTable(name, quantity){
 /**
  * Adds new product to the order table
  */
-function addProductToAcceptedTable(name, quantity){
-	var quantityTd='<td>' + quantity + '</td>', nameTd='<td>' + name + '</td>';
-	var str = '<tr>' + quantityTd + nameTd + '</tr>';
+function addProductToAcceptedTable(name, quantity, price){
+	var quantityTd='<td>' + quantity + '</td>',
+	 			nameTd='<td>' + name + '</td>',
+				priceTd= '<td>' + price + '€</td>';
+	var str = '<tr>' + quantityTd + nameTd + priceTd +'</tr>';
 	$(str).appendTo('#acceptOrderTable > tbody:last-child');
 }
 
@@ -82,9 +86,10 @@ function isProductInTable(name, order){
 function changeQuantityOfProduct(rowNumber, order){
 	if (order[rowNumber].quantity == 0) removeProduct(rowNumber, order);
 	else {
-		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>';
+		var quantity='<td>' + order[rowNumber].quantity + '</td>', name='<td>' + order[rowNumber].name + '</td>' + '<td>' + order[rowNumber].price + '€</td>';
 		$('#orderTable tr').eq(rowNumber).html(quantity + name + DECREMENT_BUTTON_HTML);
 	}
+	$(".totalPrice").html(sessionStorage["orderPrice"]);
 }
 
 /**
@@ -114,9 +119,23 @@ function removeProduct(rowNumber, order){
 }
 
 class Product {
-  constructor (name, price, image){
+  constructor (name, price, image, alcohol, category){
     this.name = name;
     this.price = price;
     this.image = image;
+	this.alcohol = alcohol;
+	this.category = category;
   };
+}
+
+function filterByAlcohol(filter){
+	userList.filter(function(item) {			
+		return item.values().alcohol == filter;
+	});	
+}
+
+function filterByCategory(category){
+	userList.filter(function(item) {
+		return item.values().category == category;
+	})
 }
