@@ -8,9 +8,16 @@ html, body{
   	user-select: none;
 	cursor: default;
 }
+
+/* ### GENERIC STUFF ### */
 .almost-vertical-fill {
 	height: 98%;
 }
+.full-width {
+	width: 100%;
+}
+
+/* ### FLEXBOX STUFF ### */
 .row-flex-container {
 	display: flex;
 }
@@ -27,21 +34,33 @@ html, body{
 .extend-main-axis {
 	flex: 1;
 }
-.flex-item {
-	
-}
+
+/* ### SPECIFIC STUFF ### */
 #title-row {
 	height: 10%;
 }
-#category-filter{
-	background-color: blueviolet;
-	width: 30%;
+
+/* --- left music filter --- */
+#main-left-col{
+	border: 1px solid black;
+	width: 20%;
 }
-#music-list{
+
+/* --- music list (center) */
+#main-center-col{
 	background-color: red;
-	width: 40%;
+	width: 50%;
 }
-#personal-votes{
+#search-box {
+	flex: 1;
+	background-color: blueviolet;
+}
+#music-list-div {
+	flex: 7;
+	background-color: yellow;
+}
+/* right sidebar (votes) */
+#main-right-col{
 	background-color: green;
 	width: 30%;
 }
