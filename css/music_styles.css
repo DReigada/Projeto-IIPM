@@ -34,6 +34,9 @@ html, body{
 .extend-main-axis {
 	flex: 1;
 }
+.flex-space-around{
+	justify-content: space-around;
+}
 
 /* ### SPECIFIC STUFF ### */
 #title-row {
@@ -59,6 +62,19 @@ html, body{
 	flex: 7;
 	background-color: yellow;
 }
+#music-list-header{
+	border-bottom: 1px solid gray;
+}
+.music-left{
+	width: 34%;
+}
+.music-center{
+	width: 33%;
+}
+.music-right{	
+	width: 33%;
+}
+
 /* right sidebar (votes) */
 #main-right-col{
 	background-color: green;
