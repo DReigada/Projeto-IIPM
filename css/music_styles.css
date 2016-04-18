@@ -1,0 +1,47 @@
+html, body{
+    height: 100%;
+	-webkit-touch-callout: none;
+  	-webkit-user-select: none;
+  	-khtml-user-select: none;
+  	-moz-user-select: none;
+	-ms-user-select: none;
+  	user-select: none;
+	cursor: default;
+}
+.almost-vertical-fill {
+	height: 98%;
+}
+.row-flex-container {
+	display: flex;
+}
+.col-flex-container {
+	display: flex;
+	flex-direction: column;
+}
+.flex-align-center{
+	align-items: center;
+}
+.flex-justify-center {
+	justify-content: center;
+}
+.extend-main-axis {
+	flex: 1;
+}
+.flex-item {
+	
+}
+#title-row {
+	height: 10%;
+}
+#category-filter{
+	background-color: blueviolet;
+	width: 30%;
+}
+#music-list{
+	background-color: red;
+	width: 40%;
+}
+#personal-votes{
+	background-color: green;
+	width: 30%;
+}
