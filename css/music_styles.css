@@ -71,13 +71,16 @@ html, body{
   padding-left:0;
 }
 .music-left{
-	width: 34%;
+	width: 35%;
 }
-.music-center{
-	width: 33%;
+.music-center-left{
+	width: 35%;
+}
+.music-center-right{	
+	width: 20%;
 }
 .music-right{	
-	width: 33%;
+	width: 10%;
 }
 .row-flex-container h4{
 	margin: auto
