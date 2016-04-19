@@ -30,3 +30,8 @@
     filterMusics(category);
     $(this).addClass('active').siblings().removeClass('active');  // make this category selected
   });
+
+  $("#searchBar").on('input', function(event){
+    searchValue = $(this).val();
+    musicList.search(searchValue, ['name', 'artist']);
+  });
