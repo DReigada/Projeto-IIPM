@@ -5,7 +5,7 @@
 			 "duration",       
 	   	 { data: ['category'] }
   ],
-    item: '<li data-category=category class="row-flex-container flex-space-around"><div class="name row-flex-container flex-justify-center flex-align-center music-left"></div><div class="artist row-flex-container flex-justify-center flex-align-center music-center"></div><div class="duration row-flex-container flex-justify-center flex-align-center music-right"></div></li>'
+    item: '<li data-category=category class="row-flex-container flex-space-around"><div class="name music-left row-flex-container flex-justify-center"></div><div class="artist music-center row-flex-container flex-justify-center"></div><div class="duration music-right row-flex-container flex-justify-center"></div></li>'
   };
 
   var musicList = new List('main-center-col', options, musics);

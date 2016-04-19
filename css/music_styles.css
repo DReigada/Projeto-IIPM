@@ -63,7 +63,13 @@ html, body{
 	background-color: yellow;
 }
 #music-list-header{
+	flex: 1;
 	border-bottom: 1px solid gray;
+}
+#music-list-body{
+	flex: 7;
+	list-style:none;
+  padding-left:0;
 }
 .music-left{
 	width: 34%;
@@ -74,6 +80,11 @@ html, body{
 .music-right{	
 	width: 33%;
 }
+.row-flex-container h4{
+	margin: auto
+}
+
+
 
 /* right sidebar (votes) */
 #main-right-col{
