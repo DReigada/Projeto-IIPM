@@ -51,20 +51,19 @@ html, body{
 
 /* --- music list (center) */
 #main-center-col{
-	background-color: red;
 	width: 50%;
 }
 #search-box {
 	flex: 1;
-	background-color: blueviolet;
+	background-color: red;
 }
 #music-list-div {
-	flex: 7;
+	flex: 6;
 	background-color: yellow;
 }
 #music-list-header{
 	flex: 1;
-	border-bottom: 1px solid gray;
+	/*border-bottom: 1px solid gray;*/
 }
 #music-list-body{
 	flex: 7;
@@ -83,11 +82,23 @@ html, body{
 .row-flex-container h4{
 	margin: auto
 }
-
-
+#music-list-body li{
+	height: 40px;
+}
 
 /* right sidebar (votes) */
 #main-right-col{
 	background-color: green;
 	width: 30%;
+}
+#votes-left{
+	background-color: coral;
+	flex: 1;
+}
+#votes-left h3{
+	margin: auto;
+}
+#client-votes-list{
+	background-color: aqua;
+	flex: 7;
 }
