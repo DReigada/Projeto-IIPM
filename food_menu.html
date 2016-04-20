@@ -58,7 +58,7 @@
 						<h4>Your request is in progress, thank you for your choice.</h4>
 					</div>
 					<div class="modal-footer">
-						<div class="inline"><a href="home.html" class="btn btn-primary btn-lg" id="orderConfirmedButton" role="button">Ok</a></div>
+						<div class="inline"><a href="orderHistory.html" class="btn btn-primary btn-lg" id="orderConfirmedButton" role="button">Ok</a></div>
 					</div>
 				</div>
 			</div>
@@ -77,6 +77,20 @@
 				</div>
 			</div>
 		</div>
+    <div id="homeClickModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4>Are you sure you want to live the page?!</h4>
+					</div>
+					<div class="modal-footer">
+						<div class="inline" style="padding-right: 20px;"><a href="home.html" role="button" id="homeClickButton" class="btn btn-danger btn-lg">Yes</a></div>
+						<div class="inline" style="padding-left: 20px;"><button type="button" class="btn btn-success btn-lg" id="notAccepHomeButton" data-dismiss="modal">No </button></div>
+					</div>
+				</div>
+			</div>
+		</div>
     	<div class="row row-content vertical-fill">
             <div class="col-xs-8 vertical-fill">
 				<div class="text-horiz-align small-height">
@@ -85,8 +99,8 @@
         <div class="row breadcrumbdiv">
           <div class="col-xs-1"></div>
           <ol class="col-xs-10 breadcrumb">
-            <li><a href="home.html"><img src="img/home.jpg" alt="home" height="25"/></a></li>
-            <li class="active">Bar Menu</li>
+            <li><div id="home_click" data-target="#homeClickModal"><img src="img/home.jpg" alt="home" height="25"/></div></li>
+            <li><a href="bar_menu.html">Bar Menu</a></li>
             <li class="active">Food Menu</li>
           </ol>
         </div>
@@ -95,7 +109,7 @@
 						<div id="products" class="vertical-fill">
 						<div class="column-flex-container vertical-fill">
 							<div id="filterToggleDiv">
-								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible"><i class="glyphicon glyphicon-menu-hamburger"></i></button>
+								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible">SearchProducts<i class="glyphicon glyphicon-menu-hamburger"></i></button>
 							</div>
 							<div class="collapse filter-class-collapse" id="filterCollapsible">
 								<div class="vertical-fill">
@@ -139,9 +153,11 @@
 										</div>
 										<div class="a-filter">
 											<div class="radio">
-												<label><input id="noCategorySelected" type="radio" name="categoryRadio" checked="true">None</label>
+												<label><input id="noCategorySelected" type="radio" name="categoryRadio" checked="true">AllProducts</label>
 											</div>
 										</div>
+                    <div class="col-xs-4"></div>
+                    <h2 class="active">Categories</h2>
 									</div>
 								</div>
 							</div>
@@ -194,7 +210,7 @@
 	<script src="js/helpers.js" type="text/javascript"></script>
 	<script type="text/javascript">
     var products = [
-      new Product("CheeseBurger1", "5€", "img/cheeseburger.png", "false", "entree"),
+      new Product("CheeseBurger1", "5€", "img/cheeseburger.png", "false", "entree", "add_button"),
       new Product("HotDog1", "4€", "img/hotdog.png", "false", "entree"),
       new Product("Potato chips1", "2€", "img/chips.png", "false", "appetizer"),
       new Product("Kebab", "2€", "img/kebab.png", "false", "entree"),

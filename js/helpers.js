@@ -119,19 +119,20 @@ function removeProduct(rowNumber, order){
 }
 
 class Product {
-  constructor (name, price, image, alcohol, category){
+  constructor (name, price, image, alcohol, category, add_button){
     this.name = name;
     this.price = price;
     this.image = image;
 	this.alcohol = alcohol;
 	this.category = category;
+	this.add_button = add_button;
   };
 }
 
 function filterByAlcohol(filter){
-	userList.filter(function(item) {			
+	userList.filter(function(item) {
 		return item.values().alcohol == filter;
-	});	
+	});
 }
 
 function filterByCategory(category){
