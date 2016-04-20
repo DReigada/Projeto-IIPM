@@ -52,23 +52,34 @@ html, body{
 /* --- music list (center) */
 #main-center-col{
 	width: 50%;
+	height: 92%;
+	width: 50%;
 }
 #search-box {
-	flex: 1;
+	height: 15%;
 	background-color: red;
 }
 #music-list-div {
-	flex: 6;
+	height: 85%;
 	background-color: yellow;
 }
 #music-list-header{
-	flex: 1;
 	/*border-bottom: 1px solid gray;*/
+	background-color: aliceblue;
+	height: 11%;
 }
 #music-list-body{
-	flex: 7;
+	height: 90%;
+	overflow-y: auto;
+}
+#music-list-body ul{
 	list-style:none;
   padding-left:0;
+}
+#music-list-body li{
+	display: flex;
+	justify-content: space-around;
+	min-height: 100px;
 }
 .music-left{
 	width: 35%;
