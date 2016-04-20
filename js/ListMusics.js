@@ -29,9 +29,11 @@
     if (category == "All") category = null;
     filterMusics(category);
     $(this).addClass('active').siblings().removeClass('active');  // make this category selected
+    musicList.sort('name', { order: "asc" }); 
   });
 
   $("#searchBar").on('input', function(event){
     searchValue = $(this).val();
     musicList.search(searchValue, ['name', 'artist']);
+    musicList.sort('name', { order: "asc" });
   });
