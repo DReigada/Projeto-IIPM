@@ -76,10 +76,10 @@ html, body{
 .music-center-left{
 	width: 35%;
 }
-.music-center-right{	
+.music-center-right{
 	width: 20%;
 }
-.music-right{	
+.music-right{
 	width: 10%;
 }
 .row-flex-container h4{
@@ -104,4 +104,44 @@ html, body{
 #client-votes-list{
 	background-color: aqua;
 	flex: 7;
+}
+
+/** Sorting Arrows**/
+.sort.asc h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
+}
+
+.sort.desc h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
+  top: -10px;
+}
+
+.sort h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
 }

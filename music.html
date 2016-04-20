@@ -17,39 +17,38 @@
   <body>
 
     <!-- food menu -->
-    <div class="container almost-vertical-fill col-flex-container">        
+    <div class="container almost-vertical-fill col-flex-container">
 			<div id="title-row" class="row-flex-container flex-justify-center">
 				<h2>BarISTa (missing button to return - breadcrumbs) </h2>
-			</div>					
+			</div>
 			<div class="row-flex-container extend-main-axis">
 				<div id="main-left-col" class="row-flex-container flex-align-center flex-justify-center">
 					<div class="full-width" role="navigation">
-						<ul class="nav nav-pills nav-stacked">
-							<li role="presentation" class="active"><a href="#">Ranks</a></li>
-							<li role="presentation"><a href="#">All Music</a></li>
-							<li role="separator" class="divider"></li>						
-							<li role="presentation"><a href="#">Classical</a></li>
-							<li role="presentation"><a href="#">Dance</a></li>
-							<li role="presentation"><a href="#">Eletronic</a></li>
-							<li role="presentation"><a href="#">Country</a></li>
-							<li role="presentation"><a href="#">Hip-Hop</a></li>
-							<li role="presentation"><a href="#">Rap</a></li>
-							<li role="presentation"><a href="#">Rock</a></li>
-							<li role="presentation"><a href="#">R&amp;B/Soul</a></li>
+						<ul id="categoryFiltersList" class="nav nav-pills nav-stacked">
+							<li role="presentation" id="rank"><a href="#">Ranks</a></li>
+							<li role="presentation" id="All" class="active"><a href="#">All Music</a></li>
+							<li role="presentation" id="classical"><a href="#">Classical</a></li>
+							<li role="presentation" id="dance"><a href="#">Dance</a></li>
+							<li role="presentation" id="eletronic"><a href="#">Eletronic</a></li>
+							<li role="presentation" id="country"><a href="#">Country</a></li>
+							<li role="presentation" id="Hip-Hop"><a href="#">Hip-Hop</a></li>
+							<li role="presentation" id="rap"><a href="#">Rap</a></li>
+							<li role="presentation" id="rock"><a href="#">Rock</a></li>
+							<li role="presentation" id="soul"><a href="#">R&amp;B/Soul</a></li>
 						</ul>
 					</div>
 				</div>
 				<div id="main-center-col" class="col-flex-container">
 					<div id="search-box" class="row-flex-container flex-justify-center flex-align-center">
-						<input class="search input-group" type="text" placeholder="Search" style="border-radius: 3px;"/>
+						<input id="searchBar" type="text" placeholder="Search" style="border-radius: 3px;"/>
 					</div>
-					<div id="music-list-div" class="col-flex-container">																			
+					<div id="music-list-div" class="col-flex-container">
 						<!-- dinamically generated -->
 						<div id="music-list-header" class="row-flex-container flex-space-around">
-							<div class="row-flex-container music-left">
-								<h4>Music</h4>
+							<div class="sort asc row-flex-container music-left" data-sort="name">
+								<h4>Title</h4>
 							</div>
-							<div class="row-flex-container music-center-left">
+							<div class="sort row-flex-container music-center-left" data-sort="artist">
 								<h4>Artist</h4>
 							</div>
 							<div class="row-flex-container music-center-right">
@@ -62,7 +61,7 @@
 						<ul id="music-list-body" class="list col-flex-container"></ul>
 					</div>
 				</div>
-				<div id="main-right-col" class="col-flex-container">				
+				<div id="main-right-col" class="col-flex-container">
 					<div id="votes-left" class="row-flex-container"><h3>Votes left <span class="badge">3</span></h3></div>
 					<div id="client-votes-list">
 						<div id="client-votes-table">
@@ -79,17 +78,17 @@
 							</table>
 						</div>
 					</div>
-				</div>				
+				</div>
 			</div>
     </div>
-						
+		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-		
+
 		<script src="js/list.js" type="text/javascript"></script>
-		
+
 		<script type="text/javascript" src="js/musicHelpers.js"></script>
 		<script type="text/javascript">
 			var musics = [
@@ -100,11 +99,26 @@
 				new Music("Hip-Hop1", "theHip-Hop1", "Hip-Hop", "4:30"),
 				new Music("Rap1", "theRap1", "rap", "4:30"),
 				new Music("Rock1", "theRock1", "rock", "4:30"),
+<<<<<<< HEAD
+				new Music("R&amp;B/Soul1", "theR&amp;B/Soul1", "soul", "4:30"),
+				new Music("Classical2", "theClassical2", "classical", "4:30"),
+        new Music("Dance2", "theDance2", "dance", "4:30"),
+        new Music("Eletronic2", "theEletronic2", "eletronic", "4:30"),
+        new Music("Country2", "theCountry2", "country", "4:30"),
+        new Music("Hip-Hop2", "theHip-Hop2", "Hip-Hop", "4:30"),
+        new Music("Rap2", "theRap2", "rap", "4:30"),
+        new Music("Rock2", "theRock2", "rock", "4:30"),
+        new Music("R&amp;B/Soul2", "theR&amp;B/Soul2", "soul", "4:30"),
+||||||| merged common ancestors
+				new Music("R&amp;B/Soul1", "theR&amp;B/Soul1", "soul", "4:30"),
+				new Music("Classical2", "theClassical2", "classica2", "4:30"),
+=======
 				new Music("Soul1", "theR&amp;B/Soul1", "soul", "4:30"),
 				new Music("Classical2", "theClassical2", "classica2", "4:30"),
+>>>>>>> feat-music
 			];
 	 </script>
-    
+
 		<script type="text/javascript" src="js/ListMusics.js"></script>
 		<script type="text/javascript" src="js/music_votes.js"></script>
   </body>
