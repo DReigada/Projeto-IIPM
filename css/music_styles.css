@@ -79,7 +79,7 @@ html, body{
 #music-list-body li{
 	display: flex;
 	justify-content: space-around;
-	min-height: 100px;
+	min-height: 40px;
 }
 .music-left{
 	width: 35%;
@@ -95,9 +95,6 @@ html, body{
 }
 .row-flex-container h4{
 	margin: auto
-}
-#music-list-body li{
-	height: 40px;
 }
 
 /* right sidebar (votes) */
