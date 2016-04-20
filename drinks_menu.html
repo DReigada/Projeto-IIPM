@@ -83,7 +83,7 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-body">
-            <h4>Are you sure you want to live the page?!</h4>
+            <h4>Are you sure you want to leave this page? (Your order will be deleted)</h4>
           </div>
           <div class="modal-footer">
             <div class="inline" style="padding-right: 20px;"><a href="home.html" role="button" id="homeClickButton" class="btn btn-danger btn-lg">Yes</a></div>
@@ -100,9 +100,9 @@
 				<div class="row breadcrumbdiv">
 				  <div class="col-xs-1"></div>
 				  <ol class="col-xs-10 breadcrumb">
-          <li><div id="home_click" data-target="#homeClickModal"><img src="img/home.jpg" alt="home" height="25"/></div></li>
-					<li><a href="bar_menu.html" class="active">Bar Menu</a></li>
-					<li class="active">Drinks Menu</li>
+            <li><div class="home_click active" data-target="#homeClickModal"><img src="img/home.jpg" alt="home" height="25"/></div></li>
+  					<li><a class="home_click active" data-target="#homeClickModal">Bar Menu</a></li>
+  					<li class="active">Drinks Menu</li>
 				  </ol>
 				</div>
 				<div class="row row-content two-thirds-vertical-fill">
@@ -110,7 +110,7 @@
 						<div id="products" class="vertical-fill">
 						<div class="column-flex-container vertical-fill">
 							<div id="filterToggleDiv">
-								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible">SearchProducts<i class="glyphicon glyphicon-menu-hamburger"></i></button>
+                <button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible">Search Products <i class="glyphicon glyphicon-menu-hamburger"></i></button>
 							</div>
 							<div class="collapse filter-class-collapse" id="filterCollapsible">
 								<div class="vertical-fill">

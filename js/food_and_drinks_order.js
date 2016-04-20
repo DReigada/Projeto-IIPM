@@ -42,7 +42,7 @@ $(function(){
 	});
 
 	// if the logo home was clicked checks if are products in ordersList
-	$("#home_click").on("click", function(event){
+	$(".home_click").on("click", function(event){
 		if (sessionStorage.numberOfProducts == "0") { window.location.href = "home.html"; return; }
 		$('#homeClickModal').modal('toggle');
 	});

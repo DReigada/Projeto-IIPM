@@ -119,13 +119,12 @@ function removeProduct(rowNumber, order){
 }
 
 class Product {
-  constructor (name, price, image, alcohol, category, add_button){
+  constructor (name, price, image, alcohol, category){
     this.name = name;
     this.price = price;
     this.image = image;
 	this.alcohol = alcohol;
 	this.category = category;
-	this.add_button = add_button;
   };
 }
 
