@@ -17,13 +17,13 @@ function Music(name, artist, category, duration){ //add year when it was release
 function voteMusic(music) {
 	user_votes = JSON.parse(sessionStorage.user_votes);
 	n_votes_left = Number(sessionStorage.n_votes_left);
-	
+
 	console.log(n_votes_left);
 	if (n_votes_left){
 		user_votes[music] ? user_votes[music] += 1 : user_votes[music] = 1;
 		--n_votes_left;
-	} 
-	
+	}
+
 	//TODO: update badge
 	$("#votes-left span").html(n_votes_left)
 	if (n_votes_left == 0) {
@@ -33,5 +33,3 @@ function voteMusic(music) {
 	sessionStorage.user_votes = JSON.stringify(user_votes);
 	sessionStorage.n_votes_left = n_votes_left;
 }
-
-
