@@ -17,7 +17,7 @@ $(function(){
 	for(music in votes){
 		var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
 		$tableRow.find('.name').html(music);
-		$tableRow.find('.votes').html(votes[music]);
+		$tableRow.find('.votes').html("voted");
 	}
 
 	$('.music-vote-button').on('click', function(e){
