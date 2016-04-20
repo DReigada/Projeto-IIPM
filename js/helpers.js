@@ -130,9 +130,9 @@ class Product {
 }
 
 function filterByAlcohol(filter){
-	userList.filter(function(item) {			
+	userList.filter(function(item) {
 		return item.values().alcohol == filter;
-	});	
+	});
 }
 
 function filterByCategory(category){
