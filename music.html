@@ -21,7 +21,7 @@
 			<div id="title-row" class="row-flex-container flex-justify-center">
 				<h2>BarISTa (missing button to return - breadcrumbs) </h2>
 			</div>
-			<div class="row-flex-container extend-main-axis">
+			<div id="main-div" class="row-flex-container almost-vertical-fill">
 				<div id="main-left-col" class="row-flex-container flex-align-center flex-justify-center">
 					<div class="full-width" role="navigation">
 						<ul id="categoryFiltersList" class="nav nav-pills nav-stacked">
@@ -38,11 +38,11 @@
 						</ul>
 					</div>
 				</div>
-				<div id="main-center-col" class="col-flex-container">
+				<div id="main-center-col">
 					<div id="search-box" class="row-flex-container flex-justify-center flex-align-center">
 						<input id="searchBar" type="text" placeholder="Search" style="border-radius: 3px;"/>
 					</div>
-					<div id="music-list-div" class="col-flex-container">
+					<div id="music-list-div">
 						<!-- dinamically generated -->
 						<div id="music-list-header" class="row-flex-container flex-space-around">
 							<div class="sort asc row-flex-container music-left" data-sort="name">
@@ -58,7 +58,7 @@
 								<h4>Vote</h4>
 							</div>
 						</div>
-						<ul id="music-list-body" class="list col-flex-container"></ul>
+						<div id="music-list-body"><ul class="list col-flex-container"></ul></div>
 					</div>
 				</div>
 				<div id="main-right-col" class="col-flex-container">
