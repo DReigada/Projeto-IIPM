@@ -33,3 +33,11 @@ function voteMusic(music) {
 	sessionStorage.user_votes = JSON.stringify(user_votes);
 	sessionStorage.n_votes_left = n_votes_left;
 }
+
+function addMusicToVotesTable(music){
+  var votes = JSON.parse(sessionStorage.user_votes);
+  if (votes[music] == 1)
+    var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
+  $tableRow.find('.name').html(music);
+  $tableRow.find('.votes').html("voted");
+}
