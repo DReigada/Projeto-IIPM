@@ -18,6 +18,7 @@ function newProductClicked(product, prev){
  * Adds new product to the order table
  */
 function addProductToTable(name, quantity, price){
+	var p = 
 	var quantityTd='<td>' + quantity + '</td>',
 				nameTd='<td>' + name + '</td>',
 				priceTd= '<td>' + price + '€</td>'
