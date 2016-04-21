@@ -8,6 +8,11 @@ $(function(){
 	if (!sessionStorage.n_votes_left){
 		sessionStorage.n_votes_left = MAX_N_VOTES;
 		sessionStorage.user_votes = JSON.stringify({});
+	
+	} else { 
+		n_votes_left = Number(sessionStorage.n_votes_left);
+		$("#votes-left span").html(n_votes_left);
+		if (n_votes_left == 0) $('.music-vote-button').disable(true);
 	}
 
 
