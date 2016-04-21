@@ -11,4 +11,3 @@
   };
 
   var userList = new List('products', options, products);
-

@@ -1,5 +1,5 @@
 $(function(){
-	
+
 	// change the default options of the modals
 	$('#acceptOrderModal').modal({
   		backdrop: 'static',
@@ -39,6 +39,26 @@ $(function(){
 		selected_id = event.delegateTarget;
 		selected = $(event.delegateTarget).find('.name').html();
 		selected_price = parseInt($(event.delegateTarget).find('.price').html());
+	});
+
+	// if the logo home was clicked checks if are products in ordersList
+	$(".home_click").on("click", function(event){
+		if (sessionStorage.numberOfProducts == "0") { window.location.href = "home.html"; return; }
+		$('#homeClickModal').modal('toggle');
+	});
+
+	// options homeClickButton is clicked
+	$("#homeClickButton").on('click', function(event) {
+		$('#homeClickModal').modal('toggle');
+		var order = JSON.parse(sessionStorage.order);
+
+		// if user wants to live, all product selected will be removed
+		while (sessionStorage.numberOfProducts && sessionStorage.numberOfProducts != "0") {
+			n = parseInt(sessionStorage.numberOfProducts);
+			removeProduct(n, order);
+		}
+		localStorage.order = JSON.stringify(order);
+		sessionStorage.numberOfProducts = 0;
 	});
 
 	// Adds product to order if the plus button was clicked
@@ -83,7 +103,7 @@ $(function(){
 
 		var storeOrder = {
 			order: order,
-			numberOfProducts : sessionStorage.numberOfProducts, 
+			numberOfProducts : sessionStorage.numberOfProducts,
 			price : sessionStorage.orderPrice
 		}
 		var ordersList;

@@ -63,7 +63,7 @@
 					<div id="votes-left" class="row-flex-container"><h3>Votes left <span class="badge">3</span></h3></div>
 					<div id="client-votes-list">
 						<div id="client-votes-table">
-							<table class="table table-hover" id="orderTable">
+							<table class="table table-hover" id="votesTable">
 								<thead>
 									<tr>
 										<th class="col-xs-4"> Music</th>
@@ -71,7 +71,7 @@
 										<th class="col-xs-2">Unvote</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody id="votesTableBody">
 								</tbody>
 							</table>
 						</div>
@@ -79,7 +79,17 @@
 				</div>
 			</div>
     </div>
-		
+    <script id="voteTemplate" type="text/template">
+      <tr style="width:100%">
+        <td class="name"></td>
+        <td class="votes"></td>
+        <td>
+          <button class="music-unvote-button btn btn-danger btn-small">
+            <i class="glyphicon glyphicon-check"></i>
+          </button>
+        </td>
+      </tr>'
+    </script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -12,7 +12,7 @@ hr {
   border: 0;
   clear:both;
   display:block;
-  width: 96%;               
+  width: 96%;
   background-color:grey;
   height: 1px;
 }
@@ -283,7 +283,7 @@ hr {
 	align-items: center;
 }
 #filterToggleDiv {																/**/
-	height: 35px;					
+	height: 45px;
 }																				/**/
 #filterCollapsible{																/**/
 	height: 200px;																/**/
@@ -302,7 +302,7 @@ hr {
 	justify-content: center;
 	align-items: center;
 	border-right: 1px solid black;
-}	
+}
 #searchBox{
 
 }
@@ -319,7 +319,7 @@ hr {
 	width: 100%;
 }
 /* --- Actual filters section --- */
-#filterSection{																	/**/													
+#filterSection{																	/**/
 	width: 300px;
 	flex: 1;																	/**/
 	flex-shrink: 1;																/**/
