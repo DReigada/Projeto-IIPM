@@ -11,7 +11,7 @@ html, body{
 
 /* ### GENERIC STUFF ### */
 .almost-vertical-fill {
-	height: 98%;
+	height: 98.5%;
 }
 .full-width {
 	width: 100%;
@@ -53,20 +53,18 @@ html, body{
 #main-center-col{
 	width: 50%;
 	height: 92%;
-	width: 50%;
 }
 #search-box {
-	height: 15%;
+	height: 13%;
 	background-color: red;
 }
 #music-list-div {
-	height: 85%;
-	background-color: yellow;
+	height: 87%;
 }
 #music-list-header{
 	/*border-bottom: 1px solid gray;*/
-	background-color: aliceblue;
-	height: 11%;
+	background-color: blanchedalmond;
+	height: 10%;
 }
 #music-list-body{
 	height: 90%;
@@ -79,7 +77,8 @@ html, body{
 #music-list-body li{
 	display: flex;
 	justify-content: space-around;
-	min-height: 40px;
+	min-height: 50px;
+	border-top: 1px solid black;
 }
 .music-left{
 	width: 35%;
@@ -101,17 +100,18 @@ html, body{
 #main-right-col{
 	background-color: green;
 	width: 30%;
+	height: 92%;
 }
 #votes-left{
 	background-color: coral;
-	flex: 1;
+	height: 13%;
 }
 #votes-left h3{
 	margin: auto;
 }
 #client-votes-list{
+	height: 87%;
 	background-color: aqua;
-	flex: 7;
 }
 
 /** Sorting Arrows**/
