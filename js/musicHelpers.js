@@ -23,7 +23,6 @@ function voteMusic(music) {
 		--n_votes_left;
 	}
 
-	//TODO: update badge
 	$("#votes-left span").html(n_votes_left);
 	if (n_votes_left == 0) {
 		$('.music-vote-button').disable(true);
@@ -35,8 +34,7 @@ function voteMusic(music) {
 
 function addMusicToVotesTable(music){
   var votes = JSON.parse(sessionStorage.user_votes);
-  if (votes[music] == 1)
-    var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
+  var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
   $tableRow.find('.name').html(music);
   $tableRow.find('.votes').html("voted");
 }
