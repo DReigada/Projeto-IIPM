@@ -14,14 +14,11 @@ $(function(){
 		if (n_votes_left == 0) $('.music-vote-button').disable(true);
 	}
 
-	var votes = JSON.parse(sessionStorage.user_votes);
-
-	for(vote in votes){
-		var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
-		$tableRow.find('.name').html(votes[vote].music);
-		$tableRow.find('.music-state').html(votes[vote].state);
-		$tableRow.data('vote-id', vote);
-	}
+	setInterval(function(){
+		updateVotesStates();
+		deleteVotesTable();
+		populateVotesTable();
+	}, 5000);
 
 	$('.music-vote-button').on('click', function(e){
 		// get name

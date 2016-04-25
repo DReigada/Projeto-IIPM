@@ -44,6 +44,7 @@ function addMusicToVotesTable(music, vote_id){
 function unvoteMusic(row) {
 	var user_votes = JSON.parse(sessionStorage.user_votes);
 	var vote_id = row.data('vote-id');
+	console.log("id: " + vote_id);
 	var music_name = user_votes[vote_id].music;
 	var music_state = user_votes[vote_id].state;
 	
@@ -68,6 +69,37 @@ function unvoteMusic(row) {
 	// allow new votes (only changes something if user had already used up his votes)
 	$('.music-vote-button').disable(false);
 }
-	
+
+function updateVotesStates() {
+	var user_votes = JSON.parse(sessionStorage.user_votes);
+	for (vote in user_votes) user_votes[vote].state = nextState(user_votes[vote].state);
+	sessionStorage.user_votes = JSON.stringify(user_votes);
+}
+
+function deleteVotesTable() {
+	$('#votesTableBody').empty();
+}
+
+function populateVotesTable() {
+	var votes = JSON.parse(sessionStorage.user_votes);
+
+	for(vote in votes){
+		var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
+		$tableRow.find('.name').html(votes[vote].music);
+		$tableRow.find('.music-state').html(votes[vote].state);
+		$tableRow.data('vote-id', vote);
+	}
+}
+
+function nextState(state) {
+	var r = HAS_PLAYED;
+
+	if (state == IN_10_MIN) r = IN_5_MIN;
+	else if (state == IN_5_MIN) r = NEXT_SONG;
+	else if (state == NEXT_SONG) r = CURRENT_SONG;
+	else if (state == CURRENT_SONG) r = HAS_PLAYED;
+
+	return r;
+}
 	
 	
