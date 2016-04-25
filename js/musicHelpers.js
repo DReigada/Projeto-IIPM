@@ -90,9 +90,12 @@ function populateVotesTable() {
 
 	for(vote in votes){
 		var $tableRow = $($("#voteTemplate").html()).appendTo('#votesTableBody');
+		var state = votes[vote].state;
 		$tableRow.find('.name').html(votes[vote].music);
 		$tableRow.find('.music-state').html(votes[vote].state);
 		$tableRow.data('vote-id', vote);
+
+		if (state == NEXT_SONG || state == CURRENT_SONG || state == HAS_PLAYED) $tableRow.find('button').remove();
 	}
 }
 
