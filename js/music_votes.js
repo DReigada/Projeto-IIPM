@@ -12,7 +12,10 @@ $(function(){
 		n_votes_left = Number(sessionStorage.n_votes_left);
 		$("#votes-left span").html(n_votes_left);
 		if (n_votes_left == 0) $('.music-vote-button').disable(true);
+
 	}
+
+	populateVotesTable();
 
 	setInterval(function(){
 		updateVotesStates();
@@ -23,10 +26,8 @@ $(function(){
 	$('.music-vote-button').on('click', function(e){
 		// get name
 		music = $(this).closest('li').find('.name').html();
-	
 		// adds vote
 		voteMusic(music);
-
 	})
 	
 	$('#votesTable').on('click', '.music-unvote-button', function(e){

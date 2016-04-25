@@ -44,7 +44,6 @@ function addMusicToVotesTable(music, vote_id){
 function unvoteMusic(row) {
 	var user_votes = JSON.parse(sessionStorage.user_votes);
 	var vote_id = row.data('vote-id');
-	console.log("id: " + vote_id);
 	var music_name = user_votes[vote_id].music;
 	var music_state = user_votes[vote_id].state;
 	
@@ -53,7 +52,7 @@ function unvoteMusic(row) {
 	if (vote_id >= sessionStorage.next_vote_id) return;
 	
 	// check if music hasn't played yet and is not the next song playing
-	if (music_state == HAS_PLAYED || music_state == NEXT_SONG) return;
+	if (music_state == HAS_PLAYED || music_state == NEXT_SONG || music_state == CURRENT_SONG) return;
 	/* END TODO */
 	
 	/* ## UPDATE STORAGE ## */
@@ -71,8 +70,13 @@ function unvoteMusic(row) {
 }
 
 function updateVotesStates() {
+	var next_count = 0;
 	var user_votes = JSON.parse(sessionStorage.user_votes);
-	for (vote in user_votes) user_votes[vote].state = nextState(user_votes[vote].state);
+	for (vote in user_votes){ 
+		// only allow one current song and one next song
+		if (user_votes[vote].state == IN_5_MIN && next_count++) continue;
+		user_votes[vote].state = nextState(user_votes[vote].state);
+	}
 	sessionStorage.user_votes = JSON.stringify(user_votes);
 }
 
@@ -81,6 +85,7 @@ function deleteVotesTable() {
 }
 
 function populateVotesTable() {
+	// TODO: remove delete vote button if music already played, his playing or his next song
 	var votes = JSON.parse(sessionStorage.user_votes);
 
 	for(vote in votes){
