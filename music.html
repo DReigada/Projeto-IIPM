@@ -22,7 +22,11 @@
 			<div id="main-div" class="row-flex-container almost-vertical-fill">
 				<div id="main-left-col" class="round-edges-col ow-flex-container flex-align-center flex-justify-center">
 					<div class="full-width" role="navigation">
-						<ul id="categoryFiltersList" class="nav nav-pills nav-stacked">
+            <div id="search-box" class="row-flex-container flex-justify-center flex-align-center">
+              <input class="form-control" id="searchBar" type="text" placeholder="Search" style="border-radius: 3px;"/>
+            </div>
+            <hr>
+          	<ul id="categoryFiltersList" class="nav nav-pills nav-stacked">
 							<li role="presentation" id="rank"><a href="#">Ranks</a></li>
 							<li role="presentation" id="All" class="active"><a href="#">All Music</a></li>
 							<li role="presentation" id="classical"><a href="#">Classical</a></li>
@@ -37,9 +41,6 @@
 					</div>
 				</div>
 				<div id="main-center-col" class="round-edges-col">
-					<div id="search-box" class="row-flex-container flex-justify-center flex-align-center">
-						<input id="searchBar" type="text" placeholder="Search" style="border-radius: 3px;"/>
-					</div>
 					<div id="music-list-div">
 						<!-- dinamically generated -->
 						<div id="music-list-header" class="row-flex-container flex-space-around">
