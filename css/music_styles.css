@@ -72,8 +72,8 @@ html, body{
 	height: 100%;
 }
 #music-list-header{
-	/*border-bottom: 1px solid gray;*/
-	background-color: blanchedalmond;
+  border-bottom: 1px solid gray;
+	background-color: #F0F0F0;
 	height: 10%;
 }
 #music-list-body{
@@ -108,20 +108,19 @@ html, body{
 
 /* right sidebar (votes) */
 #main-right-col{
-	background-color: green;
 	width: 30%;
 	height: 92%;
 }
 #votes-left{
-	background-color: coral;
+	background-color: #F0F0F0;
 	height: 13%;
+  border-bottom: 1px solid black;
 }
 #votes-left h3{
 	margin: auto;
 }
 #client-votes-list{
 	height: 87%;
-	background-color: aqua;
 }
 
 /** Sorting Arrows**/
