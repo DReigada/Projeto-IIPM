@@ -11,7 +11,7 @@ html, body{
 
 /* ### GENERIC STUFF ### */
 .almost-vertical-fill {
-	height: 98.5%;
+	height: 94%;
 }
 .full-width {
 	width: 100%;
@@ -47,23 +47,33 @@ html, body{
 #main-left-col{
 	border: 1px solid black;
 	width: 20%;
+  height: 92%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 /* --- music list (center) */
 #main-center-col{
 	width: 50%;
 	height: 92%;
+  margin-right: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
 }
 #search-box {
-	height: 13%;
-	background-color: red;
+  padding-top: 20px;
+  height: 13%;
+}
+#searchBar{
+  width: 80%;
 }
 #music-list-div {
-	height: 87%;
+	height: 100%;
 }
 #music-list-header{
-	/*border-bottom: 1px solid gray;*/
-	background-color: blanchedalmond;
+  border-bottom: 1px solid gray;
+	background-color: #F0F0F0;
 	height: 10%;
 }
 #music-list-body{
@@ -81,16 +91,16 @@ html, body{
 	border-top: 1px solid black;
 }
 .music-left{
-	width: 35%;
+	width: 30%;
 }
 .music-center-left{
-	width: 35%;
+	width: 30%;
 }
 .music-center-right{
-	width: 20%;
+	width: 25%;
 }
 .music-right{
-	width: 10%;
+	width: 15%;
 }
 .row-flex-container h4{
 	margin: auto
@@ -98,20 +108,19 @@ html, body{
 
 /* right sidebar (votes) */
 #main-right-col{
-	background-color: green;
 	width: 30%;
 	height: 92%;
 }
 #votes-left{
-	background-color: coral;
+	background-color: #F0F0F0;
 	height: 13%;
+  border-bottom: 1px solid black;
 }
 #votes-left h3{
 	margin: auto;
 }
 #client-votes-list{
 	height: 87%;
-	background-color: aqua;
 }
 
 /** Sorting Arrows**/
@@ -152,4 +161,55 @@ html, body{
   content: "";
   position: relative;
   right: -15px;
+}
+
+/* Round borders*/
+.round-edges-col{
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.musicElement{
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+
+
+/* Scrollbar Style*/
+.scrollbar::-webkit-scrollbar{
+  width: 14px;
+  height: 18px;
+	background-color: #F5F5F5;
+}
+.scrollbar::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.scrollbar::-webkit-scrollbar-thumb{
+  background-clip: padding-box;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: grey;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 90%;
+  background-color:grey;
+  height: 1px;
+}
+
+
+/* --------- Breadcrumbs -----------*/
+.breadcrumbdiv{
+  padding-bottom: 10px;
+}
+.breadcrumb{
+  margin: 5px;
+  font-size: 130%;
+  background-color: inherit;
 }
