@@ -11,7 +11,7 @@ html, body{
 
 /* ### GENERIC STUFF ### */
 .almost-vertical-fill {
-	height: 98.5%;
+	height: 94%;
 }
 .full-width {
 	width: 100%;
@@ -202,4 +202,15 @@ hr {
   width: 90%;
   background-color:grey;
   height: 1px;
+}
+
+
+/* --------- Breadcrumbs -----------*/
+.breadcrumbdiv{
+  padding-bottom: 10px;
+}
+.breadcrumb{
+  margin: 5px;
+  font-size: 130%;
+  background-color: inherit;
 }
