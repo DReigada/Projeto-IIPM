@@ -18,14 +18,13 @@ function voteMusic(music) {
 	user_votes = JSON.parse(sessionStorage.user_votes);
 	n_votes_left = Number(sessionStorage.n_votes_left);
 
-	console.log(n_votes_left);
 	if (n_votes_left){
 		user_votes[music] ? user_votes[music] += 1 : user_votes[music] = 1;
 		--n_votes_left;
 	}
 
 	//TODO: update badge
-	$("#votes-left span").html(n_votes_left)
+	$("#votes-left span").html(n_votes_left);
 	if (n_votes_left == 0) {
 		$('.music-vote-button').disable(true);
 	}
