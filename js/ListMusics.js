@@ -16,11 +16,7 @@
       return;
     }
     musicList.filter(function(item) {
-      if (item.values().category == filter) {
-        return true;
-      } else {
-        return false;
-      }
+      return item.values().category == filter;
     });
   }
 

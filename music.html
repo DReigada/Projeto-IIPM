@@ -75,7 +75,7 @@
 								<thead>
 									<tr>
 										<th class="col-xs-4"> Music</th>
-										<th class="col-xs-4"> State</th>
+										<th class="col-xs-4"> State (min)</th>
 										<th class="col-xs-2">Unvote</th>
 									</tr>
 								</thead>
@@ -90,7 +90,7 @@
     <script id="voteTemplate" type="text/template">
       <tr style="width:100%">
         <td class="name"></td>
-        <td class="votes"></td>
+        <td class="music-state"></td>
         <td>
           <button class="music-unvote-button btn btn-danger btn-small">
             <i class="glyphicon glyphicon-check"></i>
@@ -104,7 +104,8 @@
     <script src="js/bootstrap.min.js"></script>
 
 		<script src="js/list.js" type="text/javascript"></script>
-
+		
+		<script type="text/javascript" src="js/music_constants.js"></script>
 		<script type="text/javascript" src="js/musicHelpers.js"></script>
 		<script type="text/javascript">
 			var musics = [
