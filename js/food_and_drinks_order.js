@@ -16,6 +16,9 @@ $(function(){
   		keyboard: false,
 		show: false
 	})
+	// hide the add buttons
+	$('.add_button').hide();
+
 	// determines which product is selected at each moment
 	var selected_id="#option1", selected, selected_price;
 
@@ -39,6 +42,7 @@ $(function(){
 		selected_id = event.delegateTarget;
 		selected = $(event.delegateTarget).find('.name').html();
 		selected_price = parseInt($(event.delegateTarget).find('.price').html());
+		
 	});
 
 	// if the logo home was clicked checks if are products in ordersList
@@ -62,7 +66,7 @@ $(function(){
 	});
 
 	// Adds product to order if the plus button was clicked
-	$("#add_button").on("click", function(){
+	$(".add_button").on("click", function(){
 		// retrieves the order and the number of products there in from the local storage
 		var order = JSON.parse(sessionStorage.order), n = Number(sessionStorage.numberOfProducts);
 		var pos = isProductInTable(selected, order);

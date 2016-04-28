@@ -4,13 +4,13 @@ var DECREMENT_BUTTON_HTML = '<td><button type="button" class="btn btn-danger sma
  * Changes the product that is highlighted
  */
 function newProductClicked(product, prev){
-	$("#add_button").removeClass('hidden');
-
 	$(prev).addClass('hidden_border');
 	$(prev).removeClass('item-highlight');
+	$(prev).find('.add_button').hide();
 
 	$(product).addClass('item-highlight');
 	$(product).removeClass('hidden_border');
+	$(product).find('.add_button').show();
 
 }
 
