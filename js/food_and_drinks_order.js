@@ -110,7 +110,10 @@ $(function(){
 
 		// give one bonus vote for each 4 euros on the order
 		var price = parseInt(sessionStorage.orderPrice);
-		var votes_left = parseInt(sessionStorage.n_votes_left);
+		var votes_left = 0;
+		if (sessionStorage.n_votes_left) {
+	 		votes_left = parseInt(sessionStorage.n_votes_left);
+		}
 		sessionStorage.n_votes_left = votes_left + Math.floor(price / 4); // TODO: Constant???
 
 		var storeOrder = {
