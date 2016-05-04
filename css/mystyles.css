@@ -197,6 +197,9 @@ hr {
 	width:200px;
 	border:1px solid black;
 }
+.add_button {
+  float: right;
+}
 
 /* ----------- order table ------------ */
 .table {
