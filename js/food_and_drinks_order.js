@@ -88,6 +88,9 @@ $(function(){
 	$('#orderButton').on('click', function(event) {
 		if (sessionStorage.numberOfProducts == "0") return;
 
+		var price = parseInt(sessionStorage.orderPrice);
+		$("#votes-gained").html(Math.floor(price / 4)); // TODO: Constant???
+
 		$('#acceptOrderModal').modal('toggle');
 		var obj = JSON.parse(sessionStorage.order);
 		$.each(obj, function(key, value) {
@@ -105,13 +108,11 @@ $(function(){
 		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
 
-		// if the price is more than 4 give one more vote to the client
+		// give one bonus vote for each 4 euros on the order
 		var price = parseInt(sessionStorage.orderPrice);
-		if (price > 4) {
-			var votes_left = parseInt(sessionStorage.n_votes_left);
-			sessionStorage.n_votes_left = votes_left + 1;
-			console.log(sessionStorage.n_votes_left);
-		}
+		var votes_left = parseInt(sessionStorage.n_votes_left);
+		sessionStorage.n_votes_left = votes_left + Math.floor(price / 4); // TODO: Constant???
+
 		var storeOrder = {
 			order: order,
 			numberOfProducts : sessionStorage.numberOfProducts,

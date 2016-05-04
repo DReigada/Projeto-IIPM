@@ -256,6 +256,10 @@ hr {
   padding-top: 20px;
   float: right;
 }
+#votes-gained-div{
+  margin: 5px;
+  font-size: 120%;
+}
 
 
 /* ------- Filter (flex) ------------------------------------------------------*/
