@@ -42,7 +42,7 @@ $(function(){
 		selected_id = event.delegateTarget;
 		selected = $(event.delegateTarget).find('.name').html();
 		selected_price = parseInt($(event.delegateTarget).find('.price').html());
-		
+
 	});
 
 	// if the logo home was clicked checks if are products in ordersList
@@ -105,6 +105,13 @@ $(function(){
 		$('#acceptOrderModal').modal('toggle');
 		var order = JSON.parse(sessionStorage.order);
 
+		// if the price is more than 4 give one more vote to the client
+		var price = parseInt(sessionStorage.orderPrice);
+		if (price > 4) {
+			var votes_left = parseInt(sessionStorage.n_votes_left);
+			sessionStorage.n_votes_left = votes_left + 1;
+			console.log(sessionStorage.n_votes_left);
+		}
 		var storeOrder = {
 			order: order,
 			numberOfProducts : sessionStorage.numberOfProducts,
