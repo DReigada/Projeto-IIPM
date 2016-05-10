@@ -4,7 +4,7 @@ $(function(){
     localStorage.bar = JSON.stringify({});
 	}
 	if (!sessionStorage.n_votes_left){
-		sessionStorage.n_votes_left = 0;
+		sessionStorage.n_votes_left = 2;
 		sessionStorage.next_vote_id = 1;
 		sessionStorage.user_votes = JSON.stringify({});
 

@@ -112,9 +112,12 @@ $(function(){
 		var price = parseInt(sessionStorage.orderPrice);
 		var votes_left = 0;
 		if (!sessionStorage.n_votes_left) {
-	 		votes_left = 0;
+	 		votes_left = 2;
 			sessionStorage.next_vote_id = 1;
 			sessionStorage.user_votes = JSON.stringify({});
+		}
+		else {
+		 votes_left = JSON.parse(sessionStorage.n_votes_left);
 		}
 		sessionStorage.n_votes_left = votes_left + Math.floor(price / 4); // TODO: Constant???
 
