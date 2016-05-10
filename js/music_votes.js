@@ -4,11 +4,11 @@ $(function(){
     localStorage.bar = JSON.stringify({});
 	}
 	if (!sessionStorage.n_votes_left){
-		sessionStorage.n_votes_left = MAX_N_VOTES;
+		sessionStorage.n_votes_left = 0;
 		sessionStorage.next_vote_id = 1;
 		sessionStorage.user_votes = JSON.stringify({});
-	
-	} else { 
+
+	} else {
 		n_votes_left = Number(sessionStorage.n_votes_left);
 		$("#votes-left span").html(n_votes_left);
 		if (n_votes_left == 0) $('.music-vote-button').disable(true);
@@ -29,7 +29,7 @@ $(function(){
 		// adds vote
 		voteMusic(music);
 	})
-	
+
 	$('#votesTable').on('click', '.music-unvote-button', function(e){
 		var $row = $(this).closest('tr');
 		unvoteMusic($row);
