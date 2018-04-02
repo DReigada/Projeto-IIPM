@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+	<link href="css/bootstrap-switch.min.css" rel="stylesheet">
     <!-- Custom css-->
     <link href="css/mystyles.css" rel="stylesheet">
 
@@ -30,13 +31,15 @@
 								<table class="table" id="acceptOrderTable">
 									<thead>
 										<tr>
-											<th class="col-xs-1">Quantity</th>
-											<th class="col-xs-3">Product</th>
+                      <th class="col-xs-1">Quantity</th>
+											<th class="col-xs-1">Product</th>
+                      <th class="col-xs-1">Price/Un</th>
 										</tr>
 									</thead>
 									<tbody>
 									</tbody>
 								</table>
+                <div class="col-xs-3 modalTotalPrice">Total: <span class="totalPrice">0</span>€</div>
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -55,7 +58,7 @@
 						<h4>Your request is in progress, thank you for your choice.</h4>
 					</div>
 					<div class="modal-footer">
-						<div class="inline"><a href="home.html" class="btn btn-primary btn-lg" id="orderConfirmedButton" role="button">Ok</a></div>
+						<div class="inline"><a href="orderHistory.html" class="btn btn-primary btn-lg" id="orderConfirmedButton" role="button">Ok</a></div>
 					</div>
 				</div>
 			</div>
@@ -74,6 +77,20 @@
 				</div>
 			</div>
 		</div>
+    <div id="homeClickModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+            <h4>Are you sure you want to leave this page? (Your order will be deleted)</h4>
+					</div>
+					<div class="modal-footer">
+						<div class="inline" style="padding-right: 20px;"><a href="home.html" role="button" id="homeClickButton" class="btn btn-danger btn-lg">Yes</a></div>
+						<div class="inline" style="padding-left: 20px;"><button type="button" class="btn btn-success btn-lg" id="notAccepHomeButton" data-dismiss="modal">No </button></div>
+					</div>
+				</div>
+			</div>
+		</div>
     	<div class="row row-content vertical-fill">
             <div class="col-xs-8 vertical-fill">
 				<div class="text-horiz-align small-height">
@@ -82,48 +99,82 @@
         <div class="row breadcrumbdiv">
           <div class="col-xs-1"></div>
           <ol class="col-xs-10 breadcrumb">
-            <li><a href="home.html">Home</a></li>
-            <li class="active">Bar Menu</li>
+            <li><div class="home_click active" data-target="#homeClickModal"><img src="img/home.jpg" alt="home" height="25"/></div></li>
+            <li><a class="home_click active" data-target="#homeClickModal">Bar Menu</a></li>
             <li class="active">Food Menu</li>
           </ol>
         </div>
-                <div class="outer-vertically-align">
-                    <div class="inner-vertically-align">
-                        <div class="row row-content">
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option1">
-									<div class="text-horiz-align"><h6 class="productName">Cheeseburger</h6></div>
-                                	<div class="center-horiz-div"><img src="img/cheeseburger.png" alt="hamburguer" height="100" width="100"></div>
+        <div class="row row-content two-thirds-vertical-fill">
+					<div class="col-xs-12 filterDiv vertical-fill">
+						<div id="products" class="vertical-fill">
+						<div class="column-flex-container vertical-fill">
+							<div id="filterToggleDiv">
+								<button type="button" class="btn btn-primary btn-small filterButton" data-toggle="collapse" data-target="#filterCollapsible">Search Products <i class="glyphicon glyphicon-menu-hamburger"></i></button>
+							</div>
+							<div class="collapse filter-class-collapse" id="filterCollapsible">
+								<div class="vertical-fill">
+								<div class="row-flex-container almost-vertical-fill medium-margin-top" id="filterOptionsDiv">
+									<div id="searchSection" class="column-flex-container">
+										<div id="searchBox" class="input-group input-group-sm row-flex-container flex-center-items search">
+											<input type="search" name="productSearch" class="form-control" style="border-radius:3px;" placeholder="Search" aria-describedby="sizing-addon2">
+											<!--<span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-search"></i></span>-->
+										</div>
+										<div id="sortProducts" class="row-flex-container flex-center-items flex-wrap">
+											<hr>
+											<div id="sortBy"><div style="padding-left: 30px;"><h5>Sort by:</h5></div></div>
+											<div class="radio-inline">
+												<label><input type="radio" name="sortRadio" class="sort" data-sort="name">Name</label>
+											</div>
+											<div class="radio-inline">
+												<label><input class="sort" data-sort="price" type="radio" name="sortRadio">Price</label>
+											</div>
+										</div>
+									</div>
+									<div id="filterSection" class="row-flex-container flex-center-items flex-wrap-reverse flex-align-content-center">
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="entree" type="radio" name="categoryRadio">Entrées</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="dessert" type="radio" name="categoryRadio">Dessert</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="appetizer" type="radio" name="categoryRadio">Appetizers/Siders</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="salad" type="radio" name="categoryRadio">Salads</label>
+											</div>
+										</div>
+										<div class="a-filter">
+											<div class="radio">
+												<label><input id="noCategorySelected" type="radio" name="categoryRadio" checked="true">AllProducts</label>
+											</div>
+										</div>
+                    <div class="col-xs-4"></div>
+                    <h2 class="active">Categories</h2>
+									</div>
 								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option2">
-									<div class="text-horiz-align"><h6 class="productName">HotDog</h6></div>
-                                	<div class="center-horiz-div"><img src="img/hotdog.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option3">
-									<div class="text-horiz-align"><h6 class="productName">Chips</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding"><img src="img/chips.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
-                            </div>
-                            <div class="col-xs-6">
-								<div class="on-hover hidden_border small-padding" id="option4">
-									<div class="text-horiz-align"><h6 class="productName">Kebab</h6></div>
-                                	<div class="center-horiz-div on-hover small-padding"><img src="img/kebab.png" alt="hamburguer" height="100" width="100"></div>
-								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer small-height outer-vertically-align">
-                    <div class="inner-vertically-align">
-						<div class="inline 	hidden" id="add_button"><button type="button" class="btn btn-success btn-circle"><i class="glyphicon glyphicon-plus"></i></button></div>
+							</div>
+							</div>
+							<div id="companyProducts" class="scrollbar row-flex-container">
+								<ul class="list container productsList"></ul>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+        <div class="footer small-height outer-vertically-align">
+          <div class="inner-vertically-align">
 						<div class="inline"><a href="drinks_menu.html" class="btn btn-primary" role="button">Drinks Menu</a></div>
             			<div class="inline"><button type="button" class="btn btn-danger" id="cancelOptionButton" data-target="#cancelOrderModal">Cancel</button></div>
 					</div>
-                </div>
+        </div>
             </div>
             <div class="col-xs-4 vertical-fill side-bar-container">
       				<div class="almost-vertical-fill side-bar scrollbar">
@@ -131,9 +182,10 @@
       						<table class="table table-hover" id="orderTable">
           						<thead>
             							<tr>
-              							<th class="col-xs-1"></th>
-              							<th class="col-xs-3">Order</th>
-      									<th class="col-xs-2"></th>
+                            <th class="col-xs-2">Qt</th>
+              							<th class="col-xs-4">Product</th>
+                            <th class="col-xs-4">Price/Un</th>
+							              <th class="col-xs-2"></th>
       								</tr>
       							</thead>
       							<tbody>
@@ -141,19 +193,39 @@
       						</table>
       					</div>
       				</div>
+              <div class="totalPriceDiv">Price: <span class="totalPrice">0</span>€</div>
               <button type="button" id="orderButton" class="btn btn-wide btn-success" data-target="#acceptOrderModal">Order</button>
             </div>
         </div>
     </div>
-	<script type="text/javascript">
-		var option1 = "CheeseBurger", option2 = "HotDog", option3 = "Potato chips", option4 = "Kebab";
-	</script>
+    <script src="js/bootstrap-switch.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-2.2.2.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+  <script src="js/list.js" type="text/javascript"></script>
 	<script src="js/helpers.js" type="text/javascript"></script>
-	<script src="js/food_and_drinks_order.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    var products = [
+      new Product("CheeseBurger1", "5€", "img/cheeseburger.png", "false", "entree", "add_button"),
+      new Product("HotDog1", "4€", "img/hotdog.png", "false", "entree"),
+      new Product("Potato chips1", "2€", "img/chips.png", "false", "appetizer"),
+      new Product("Kebab", "2€", "img/kebab.png", "false", "entree"),
+      new Product("CheeseBurger2", "5€", "img/cheeseburger.png", "false", "entree"),
+      new Product("HotDog2", "4€", "img/hotdog.png", "false", "entree"),
+      new Product("Potato chips2", "2€", "img/chips.png", "false", "entree"),
+      new Product("Kebab2", "2€", "img/kebab.png", "false", "entree"),
+	     new Product("Ice-cream", "10€", "img/icecream.png", "false", "dessert"),
+      new Product("Bread", "9€", "img/bread.png", "false", "appetizer"),
+      new Product("Tuna Salad", "12€", "img/hotdog.png", "false", "salad"),
+      new Product("Chicken Salad", "13€", "img/salad.png", "false", "salad"),
+      new Product("Pudding", "7€", "img/pudding.png", "false", "dessert"),
+
+    ];
+	</script>
+  <script src="js/ListProducts.js" type="text/javascript"> </script>
+  <script src="js/food_and_drinks_order.js" type="text/javascript"></script>
+  <script src="js/filterFood.js" type="text/javascript"></script>
   </body>
 </html>

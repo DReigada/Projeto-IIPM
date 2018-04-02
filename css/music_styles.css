@@ -1,0 +1,215 @@
+html, body{
+    height: 100%;
+	-webkit-touch-callout: none;
+  	-webkit-user-select: none;
+  	-khtml-user-select: none;
+  	-moz-user-select: none;
+	-ms-user-select: none;
+  	user-select: none;
+	cursor: default;
+}
+
+/* ### GENERIC STUFF ### */
+.almost-vertical-fill {
+	height: 94%;
+}
+.full-width {
+	width: 100%;
+}
+
+/* ### FLEXBOX STUFF ### */
+.row-flex-container {
+	display: flex;
+}
+.col-flex-container {
+	display: flex;
+	flex-direction: column;
+}
+.flex-align-center{
+	align-items: center;
+}
+.flex-justify-center {
+	justify-content: center;
+}
+.extend-main-axis {
+	flex: 1;
+}
+.flex-space-around{
+	justify-content: space-around;
+}
+
+/* ### SPECIFIC STUFF ### */
+#title-row {
+	height: 10%;
+}
+
+/* --- left music filter --- */
+#main-left-col{
+	border: 1px solid black;
+	width: 20%;
+  height: 92%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/* --- music list (center) */
+#main-center-col{
+	width: 50%;
+	height: 92%;
+  margin-right: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: 0px;
+}
+#search-box {
+  padding-top: 20px;
+  height: 13%;
+}
+#searchBar{
+  width: 80%;
+}
+#music-list-div {
+	height: 100%;
+}
+#music-list-header{
+  border-bottom: 1px solid gray;
+	background-color: #F0F0F0;
+	height: 10%;
+}
+#music-list-body{
+	height: 90%;
+	overflow-y: auto;
+}
+#music-list-body ul{
+	list-style:none;
+  padding-left:0;
+}
+#music-list-body li{
+	display: flex;
+	justify-content: space-around;
+	min-height: 50px;
+	border-top: 1px solid black;
+}
+.music-left{
+	width: 30%;
+}
+.music-center-left{
+	width: 30%;
+}
+.music-center-right{
+	width: 25%;
+}
+.music-right{
+	width: 15%;
+}
+.row-flex-container h4{
+	margin: auto
+}
+
+/* right sidebar (votes) */
+#main-right-col{
+	width: 30%;
+	height: 92%;
+}
+#votes-left{
+	background-color: #F0F0F0;
+	height: 13%;
+  border-bottom: 1px solid black;
+}
+#votes-left h3{
+	margin: auto;
+}
+#client-votes-list{
+	height: 87%;
+}
+
+/** Sorting Arrows**/
+.sort.asc h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
+}
+
+.sort.desc h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
+  top: -10px;
+}
+
+.sort h4:after {
+  float: right;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent; /* arrow color*/
+  content: "";
+  position: relative;
+  right: -15px;
+}
+
+/* Round borders*/
+.round-edges-col{
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.musicElement{
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 2px;
+}
+
+
+/* Scrollbar Style*/
+.scrollbar::-webkit-scrollbar{
+  width: 14px;
+  height: 18px;
+	background-color: #F5F5F5;
+}
+.scrollbar::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.scrollbar::-webkit-scrollbar-thumb{
+  background-clip: padding-box;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: grey;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 90%;
+  background-color:grey;
+  height: 1px;
+}
+
+
+/* --------- Breadcrumbs -----------*/
+.breadcrumbdiv{
+  padding-bottom: 10px;
+}
+.breadcrumb{
+  margin: 5px;
+  font-size: 130%;
+  background-color: inherit;
+}
